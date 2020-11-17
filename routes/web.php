@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardManagerController;
+use App\Http\Controllers\ManagerProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,9 @@ use App\Http\Controllers\DashboardManagerController;
 |
 */
 
-Route::middleware('manager')->group(function () {
+// TODO: Make middleware
+// Route::middleware('manager')->group(function () {
     Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
-});
+
+    Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
+// });
