@@ -27,7 +27,7 @@
     <title>Dashboard Manager</title>
 </head>
 <body>
-    <div class="container dashboard">
+    <div class="container-fluid p-0 dashboard">
         <div class="wrapper">
             <!-- Sidebar  -->
             <nav id="sidebar">
@@ -70,9 +70,12 @@
                         </div>
                     </div>
                 </nav>
+
+                <div class="container">
+                    @yield('content')
+                </div>
             </div>
         </div>
     </div>
-    @yield('content')
 </body>
 </html>
