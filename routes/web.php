@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardManagerController;
 use App\Http\Controllers\ManagerProfileController;
+use App\Http\Controllers\RuanganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,7 @@ use App\Http\Controllers\ManagerProfileController;
 // TODO: Make middleware
 // Route::middleware('manager')->group(function () {
     Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
-
     Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
+    Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
+
 // });
