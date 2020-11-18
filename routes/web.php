@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardManagerController;
 use App\Http\Controllers\ManagerProfileController;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,5 @@ Route::post('login', [AuthenticationController::class, 'login']);
     Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
 
     Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
+    Route::get('/manager/laporan', [ReportController::class, 'index']);
 // });
-
-
