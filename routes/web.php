@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardManagerController;
 use App\Http\Controllers\ManagerProfileController;
+<<<<<<< HEAD
 use App\Http\Controllers\RuanganController;
+=======
+use App\Http\Controllers\AuthenticationController;
+>>>>>>> fd97fc6ebfc5094b03fd4d903cbdf9440fa6f3a5
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +20,9 @@ use App\Http\Controllers\RuanganController;
 |
 */
 
+
+Route::view('login', 'login');
+Route::post('login', [AuthenticationController::class, 'login']);
 // TODO: Make middleware
 // Route::middleware('manager')->group(function () {
     Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
@@ -23,3 +30,5 @@ use App\Http\Controllers\RuanganController;
     Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
 
 // });
+
+
