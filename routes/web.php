@@ -3,11 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardManagerController;
 use App\Http\Controllers\ManagerProfileController;
-<<<<<<< HEAD
+
 use App\Http\Controllers\RuanganController;
-=======
+
 use App\Http\Controllers\AuthenticationController;
->>>>>>> fd97fc6ebfc5094b03fd4d903cbdf9440fa6f3a5
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +28,7 @@ Route::post('login', [AuthenticationController::class, 'login']);
     Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
     Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
     Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
+    Route::post('/manager/ruangan', [RuanganController::class, 'tambahRuangan']);
 
 // });
 

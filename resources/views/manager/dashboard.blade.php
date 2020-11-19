@@ -13,13 +13,11 @@
 
     <div class="row flexing">
         <div class="container ruang ruang_sudah">
-            <h1>{{ ruang()->nama }}</h1>
+            <h1></h1>
             <h2>Status : SUDAH</h2>
-            <h3>{{ users()->nama }}</h3>
-            <a href="#">{{ bukti()->bukti }}</a>
-                @foreach ($ruang as $r)
-                    <option value="{{ $r->id }}"></option>
-                @endforeach
+            <h3></h3>
+            <a href="#"></a>
+               
         </div>
                     <div class="container ruang ruang_belum">
                         <h1>R.302</h1>
