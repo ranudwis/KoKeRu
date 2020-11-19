@@ -6,6 +6,7 @@ use App\Http\Controllers\ManagerProfileController;
 use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\CsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,6 @@ Route::post('login', [AuthenticationController::class, 'login']);
     Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
     Route::get('/manager/laporan', [ReportController::class, 'index']);
     Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
+    Route::get('/manager/cs', [CsController::class, 'tampilCS']);
+    Route::get('/manager/edit_cs', [CsController::class, 'tampileditCS']);
 // });
