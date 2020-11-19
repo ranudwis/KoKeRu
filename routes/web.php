@@ -23,8 +23,10 @@ Route::view('login', 'login');
 Route::post('login', [AuthenticationController::class, 'login']);
 // TODO: Make middleware
 // Route::middleware('manager')->group(function () {
-    Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
-    Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
-    Route::get('/manager/laporan', [ReportController::class, 'index']);
-    Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
+Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
+Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
+Route::get('/manager/laporan', [ReportController::class, 'index']);
+Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
 // });
+
+Route::get('/manager/detail_ruang', [DashboardManagerController::class, 'tampilDetailRuang']);
