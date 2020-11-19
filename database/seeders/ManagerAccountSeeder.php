@@ -14,12 +14,14 @@ class ManagerAccountSeeder extends Seeder
      */
     public function run()
     {
-        $user = new User();
-        $user->nama = 'Manager';
-        $user->email = 'manager@kokeru.id';
-        $user->password = 'manager';
-        $user->tipe_akun = 'manager';
+        if (User::where('email', 'manager@kokeru.id')->get()->isEmpty()) {
+            $user = new User();
+            $user->nama = 'Manager';
+            $user->email = 'manager@kokeru.id';
+            $user->password = 'manager';
+            $user->tipe_akun = 'manager';
 
-        $user->save();
+            $user->save();
+        }
     }
 }
