@@ -10,4 +10,9 @@ class Ruang extends Model
     use HasFactory;
 
     protected $table = 'ruang';
+
+    public function cs()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

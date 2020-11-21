@@ -164,7 +164,6 @@ a.article:hover {
 .semua_ruang {
     text-align: center;
     padding: 20px;
-    align-content: center;
 }
 
 .semua_ruang h4 {
@@ -191,6 +190,7 @@ a.article:hover {
 }
 
 .ruang h1 {
+    font-size: 25px;
     border: 2px solid rgb(163, 161, 161);
     background-color: rgb(34, 34, 34);
 }
@@ -213,7 +213,7 @@ a.article:hover {
 }
 
 .flexing {
-    justify-content: left;
+    justify-content: center;
     border-top: 3px solid black;
 }
 
