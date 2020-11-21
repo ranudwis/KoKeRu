@@ -11,14 +11,11 @@ class Ruang extends Model
 
     protected $table = 'ruang';
 
-<<<<<<< HEAD
     public function laporan()
     {
         return $this->hasMany(Laporan::class, 'id_ruang');
     }
 
-=======
->>>>>>> 64a99aced304edbd20140a2b0f814153128437c5
     public function cs()
     {
         return $this->belongsTo(User::class, 'user_id');
