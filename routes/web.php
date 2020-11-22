@@ -24,13 +24,20 @@ Route::view('login', 'login');
 Route::post('login', [AuthenticationController::class, 'login']);
 // TODO: Make middleware
 // Route::middleware('manager')->group(function () {
+<<<<<<< HEAD
 
+=======
+>>>>>>> b759c23c53cd51997027e6562b2636fff7a81679
     Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
     Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
+
     Route::get('/manager/laporan', [ReportController::class, 'index']);
+
     Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
+
     Route::get('/manager/cs', [CsController::class, 'tampilCS']);
     Route::get('/manager/edit_cs', [CsController::class, 'tampileditCS']);
+<<<<<<< HEAD
 
 Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
 Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
@@ -38,5 +45,8 @@ Route::get('/manager/laporan', [ReportController::class, 'index']);
 Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
 
 // });
+=======
+>>>>>>> b759c23c53cd51997027e6562b2636fff7a81679
 
-Route::get('/manager/detail_ruang', [DashboardManagerController::class, 'tampilDetailRuang']);
+    Route::get('/manager/detail_ruang', [DashboardManagerController::class, 'tampilDetailRuang']);
+// });
