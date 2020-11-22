@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ruang;
 
-class RuanganController extends Controller
+class DashboardCsController extends Controller
 {
-    public function tampilRuangan()
+    public function ruanganCS()
     {
         $ruang = Ruang::all();
-        return view('manager.ruangan', compact('ruang'));
+        return view('cs.ruang_cs', compact('ruang'));
     }
 }

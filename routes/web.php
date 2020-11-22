@@ -7,6 +7,8 @@ use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\CsController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardCsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,15 +26,17 @@ Route::view('login', 'login');
 Route::post('login', [AuthenticationController::class, 'login']);
 // TODO: Make middleware
 // Route::middleware('manager')->group(function () {
-    Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
-    Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
+Route::get('/', [HomeController::class, 'home']);
 
-    Route::get('/manager/laporan', [ReportController::class, 'index']);
+// Manager
+Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
+Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
+Route::get('/manager/laporan', [ReportController::class, 'index']);
+Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
+Route::get('/manager/detail_ruang', [DashboardManagerController::class, 'tampilDetailRuang']);
+Route::get('/manager/cs', [CsController::class, 'tampilCS']);
+Route::get('/manager/edit_cs/{id}', [CsController::class, 'tampileditCS']);
 
-    Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
 
-    Route::get('/manager/cs', [CsController::class, 'tampilCS']);
-    Route::get('/manager/edit_cs', [CsController::class, 'tampileditCS']);
-
-    Route::get('/manager/detail_ruang', [DashboardManagerController::class, 'tampilDetailRuang']);
-// });
+// CS
+Route::get('/cs/dashboard', [DashboardCsController::class, 'ruanganCS']);
