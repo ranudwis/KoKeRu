@@ -22,5 +22,6 @@ class DashboardManagerController extends Controller
     public function tampilDetailRuang()
     {
         return view('manager.detail_ruang');
+
     }
 }

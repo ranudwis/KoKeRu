@@ -12,6 +12,13 @@
         @endforeach
         @endif
 
+    <div class="row flexing">
+        <div class="container ruang ruang_sudah">
+            <h1></h1>
+            <h2>Status : SUDAH</h2>
+            <h3></h3>
+            <a href="#"></a>
+
         <div class="row flexing">
 
         @foreach ($ruang as $r)
