@@ -8,7 +8,6 @@ use App\Http\Controllers\RuanganController;
 
 use App\Http\Controllers\AuthenticationController;
 
-=======
 use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ReportController;
