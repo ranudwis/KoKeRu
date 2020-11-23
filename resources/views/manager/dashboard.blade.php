@@ -21,17 +21,21 @@
 
         <div class="row flexing">
 
-            {{--<div class="container ruang ruang_sudah">
-    <h1>{{ ruang()->nama }}</h1>
-            <h2>Status : SUDAH</h2>
-            <h3>{{ users()->nama }}</h3>
-            <a href="#">{{ bukti()->bukti }}</a>
-            @foreach ($ruang as $r)
-            <option value="{{ $r->id }}"></option>
-            @endforeach
-        </div> --}}
+        @foreach ($ruang as $r)
+            <div class="container ruang {{ $loop->index % 2 == 0 ? 'ruang_belum' : 'ruang_sudah' }}">
+                <h1>{{ $r->nama }}</h1>
+                <h2>Status : {{ $loop->index % 2 == 0 ? 'Belum' : 'Sudah' }}</h2>
+                <h3>CS : {{ $r->cs->nama }}</h3>
+                @if($loop->index % 2 == 1)
+                    <a href="#">BUKTI</a>
+                @else
+                @endif
+                
+            </div>
+        @endforeach
+        
 
-        <div class="container ruang ruang_belum">
+        {{-- <div class="container ruang ruang_belum">
             <h1>R.302</h1>
             <h2>Status : BELUM</h2>
             <h3>CS : Bambang</h3>
@@ -80,6 +84,6 @@
             <h2>Status : SUDAH</h2>
             <h3>CS : Bambang</h3>
             <a href="#">BUKTI</a>
-        </div>
+        </div> --}}
 </div>
 @endsection

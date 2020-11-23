@@ -1,73 +1,9 @@
-//ruangan
+/*
+    DEMO STYLE
+*/
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
-    color: #404E67;
-    background: #F5F7FA;
-    font-family: 'Open Sans', sans-serif;
-}
-.table-wrapper {
-    width: 700px;
-    margin: 30px auto;
-    background: #fff;
-    padding: 20px;  
-    box-shadow: 0 1px 1px rgba(0,0,0,.05);
-}
-.table-title {
-    padding-bottom: 10px;
-    margin: 0 0 10px;
-}
-.table-title h2 {
-    margin: 6px 0 0;
-    font-size: 22px;
-}
-.table-title .add-new {
-    float: right;
-    height: 30px;
-    font-weight: bold;
-    font-size: 12px;
-    text-shadow: none;
-    min-width: 100px;
-    border-radius: 50px;
-    line-height: 13px;
-}
-.table-title .add-new i {
-    margin-right: 4px;
-}
-table.table {
-    table-layout: fixed;
-}
-table.table tr th, table.table tr td {
-    border-color: #e9e9e9;
-}
-table.table th i {
-    font-size: 13px;
-    margin: 0 5px;
-    cursor: pointer;
-}
-table.table th:last-child {
-    width: 100px;
-}
-table.table td a {
-    cursor: pointer;
-    display: inline-block;
-    margin: 0 5px;
-    min-width: 24px;
-}    
-table.table td a.add {
-    color: #27C46B;
-}
-table.table td a.edit {
-    color: #FFC107;
-}
-table.table td a.delete {
-    color: #E34724;
-}
-table.table td i {
-    font-size: 19px;
-}
-table.table td a.add i {
-    font-size: 24px;
-    margin-right: -1px;
-=======
     font-family: "Poppins", sans-serif;
     background: #fafafa;
 }
@@ -166,20 +102,6 @@ a[aria-expanded="true"] {
 
 a[data-toggle="collapse"] {
     position: relative;
-    top: 3px;
-}    
-table.table .form-control {
-    height: 32px;
-    line-height: 32px;
-    box-shadow: none;
-    border-radius: 2px;
-}
-<<<<<<< HEAD
-table.table .form-control.error {
-    border-color: #f50000;
-}
-table.table td .add {
-    display: none;
 }
 
 .dropdown-toggle::after {
@@ -327,6 +249,24 @@ a.article:hover {
     justify-content: center;
 }
 
+.profil-cs {
+    padding: 0;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: rgb(142, 255, 255);
+    font-weight: bold;
+    border-bottom: 4px solid rgb(142, 255, 255);
+}
+
+.profil-cs .fotoCS {
+    margin-bottom: 10px;
+    max-width: 100px;
+    border-radius: 1000px;
+}
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
@@ -343,3 +283,54 @@ a.article:hover {
     }
 }
 
+/* ---------------------------------------------------
+    Pindahan dari manager/cs.css
+----------------------------------------------------- */
+
+.table-kategori {
+    width: 600px;
+    margin-top: 20px;
+    margin-left: 260px;
+}
+.fa-pencil-alt:hover {
+    color: #2196f3;
+    font-size: 18px;
+}
+.fa-trash-alt {
+    color: #e53935;
+}
+
+.fa-trash-alt:hover {
+    color: red;
+    font-size: 18px;
+}
+.table-hover tr:hover td {
+    background: #c5cae9;
+    font-weight: bold;
+}
+
+.card-profil {
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 60%;
+    background-color: #c5cae9;
+}
+.form-control {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    border-radius: 2px;
+}
+
+.btn-edit {
+    margin-top: 10px;
+    margin-left: 500px;
+    border-radius: 2px;
+}
+
+.card-header {
+    background-color: #7986cb;
+}
+
+.edit {
+    width: 80%;
+}

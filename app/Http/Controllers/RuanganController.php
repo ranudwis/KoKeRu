@@ -7,6 +7,7 @@ use App\Models\Ruang;
 
 class RuanganController extends Controller
 {
+<<<<<<< HEAD
     public function tampilRuangan() {
         $ruang = Ruang::all();
         
@@ -24,5 +25,11 @@ class RuanganController extends Controller
 
         
         return back();
+=======
+    public function tampilRuangan()
+    {
+        $ruang = Ruang::all();
+        return view('manager.ruangan', compact('ruang'));
+>>>>>>> 58d21326b624894dcbddc4b812979a4452d7dfab
     }
 }

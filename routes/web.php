@@ -12,6 +12,8 @@ use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\CsController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardCsController;
 
 
 /*
@@ -31,6 +33,7 @@ Route::post('login', [AuthenticationController::class, 'login']);
 // TODO: Make middleware
 // Route::middleware('manager')->group(function () {
 
+<<<<<<< HEAD
     Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
     Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
     Route::get('/manager/laporan', [ReportController::class, 'index']);
@@ -41,6 +44,20 @@ Route::post('login', [AuthenticationController::class, 'login']);
 
     Route::get('/manager/cs', [CsController::class, 'tampilCS']);
     Route::get('/manager/edit_cs', [CsController::class, 'tampileditCS']);
+=======
+Route::get('/', [HomeController::class, 'home']);
+
+
+// Manager
+Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
+Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
+Route::get('/manager/laporan', [ReportController::class, 'index']);
+Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
+Route::get('/manager/detail_ruang', [DashboardManagerController::class, 'tampilDetailRuang']);
+Route::get('/manager/cs', [CsController::class, 'tampilCS']);
+Route::get('/manager/edit_cs/{id}', [CsController::class, 'tampileditCS']);
+
+>>>>>>> 58d21326b624894dcbddc4b812979a4452d7dfab
 
 Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
 Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
@@ -48,5 +65,6 @@ Route::get('/manager/laporan', [ReportController::class, 'index']);
 Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
 
 // });
+// CS
+Route::get('/cs/dashboard', [DashboardCsController::class, 'ruanganCS']);
 
-Route::get('/manager/detail_ruang', [DashboardManagerController::class, 'tampilDetailRuang']);
