@@ -38,6 +38,7 @@ Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
 Route::get('/manager/detail_ruang', [DashboardManagerController::class, 'tampilDetailRuang']);
 Route::get('/manager/cs', [CsController::class, 'tampilCS']);
 Route::get('/manager/edit_cs/{id}', [CsController::class, 'tampileditCS']);
+Route::get('/manager/hapus_cs/{id}', [CsController::class, 'hapusCS']);
 
 
 Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
