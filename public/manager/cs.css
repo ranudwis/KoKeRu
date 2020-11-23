@@ -1,0 +1,49 @@
+.table-kategori{
+	width: 600px;
+	margin-top: 20px;
+	margin-left: 260px;
+}
+.fa-pencil-alt:hover{
+	color: #2196F3;
+	font-size: 18px;
+}
+.fa-trash-alt{
+	color: #E53935;
+}
+
+.fa-trash-alt:hover{
+	color: red;
+	font-size: 18px;
+}
+.table-hover tr:hover td
+{ 	
+	background: #C5CAE9;
+	font-weight: bold;
+}
+
+.card-profil{
+	margin-top: 50px;
+	margin-left: 20px;
+	width: 60%;
+	background-color: #C5CAE9;
+}
+.form-control{
+	margin-bottom: 10px;
+	margin-left: 20px;
+	border-radius: 2px;
+}
+
+.btn-edit{
+	margin-top: 10px;
+	margin-left: 500px;
+	border-radius: 2px;
+}
+
+.card-header{
+	background-color: #7986CB;
+}
+
+.edit{
+	width: 80%;
+}
+

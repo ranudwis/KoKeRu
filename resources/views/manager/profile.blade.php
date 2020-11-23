@@ -1,24 +1,35 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-        <form method="POST" action="{{ url('manager/profile') }}">
-            @csrf
+@extends('partial.dashboard_manager')
 
-            <input type="text" name="nama" placeholder="Nama" /><br />
+@section('content')
+    <form method="POST" action="{{ url('manager/profile') }}">
+        @csrf
 
-            <input type="text" name="email" placeholder="Email" /><br />
+        <div class="form-group">
+            <label for="nama">Nama</label>
+            <input id="nama" class="form-control" type="text" name="nama" autofocus />
+        </div>
 
-            ganti password<br />
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" class="form-control" type="email" name="email" />
+        </div>
 
-            <input type="password" name="old_password" placeholder="Password Lama" /><br />
-            <input type="password" name="password" placeholder="Password baru" /><br />
-            <input type="password" name="password_confirmed" placeholder="Ulangi Password" /><br />
+        <p class="h5">
+            Ganti Password
+        </p>
 
-            <button type="submit">Simpan</button>
-        </form>
-    </body>
-</html>
+        <div class="form-group">
+            <label for="oldpassword">Password Lama</label>
+            <input id="oldpassword" class="form-control" type="password" name="old_password" />
+        </div>
+        <div class="form-group">
+            <label for="newpassword">Password Baru</label>
+            <input id="newpassword" class="form-control" type="password" name="password" />
+        </div>
+        <div class="form-group">
+            <label for="newconfirmedpassword">Konfirmasi Password Baru</label>
+            <input id="newconfirmedpassword" class="form-control" type="password" name="password_confirmed" />
+        </div>
+        <button class="btn btn-primary" type="submit">Simpan</button>
+    </form>
+@endsection

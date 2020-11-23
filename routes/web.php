@@ -3,11 +3,18 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardManagerController;
 use App\Http\Controllers\ManagerProfileController;
+<<<<<<< HEAD
 
 use App\Http\Controllers\RuanganController;
 
 use App\Http\Controllers\AuthenticationController;
 
+=======
+use App\Http\Controllers\RuanganController;
+use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\CsController;
+>>>>>>> e0f5e68133fbb6207725b8c49a6bf13c53e240d3
 
 /*
 |--------------------------------------------------------------------------
@@ -25,11 +32,24 @@ Route::view('login', 'login');
 Route::post('login', [AuthenticationController::class, 'login']);
 // TODO: Make middleware
 // Route::middleware('manager')->group(function () {
+<<<<<<< HEAD
     Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
     Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
+    Route::get('/manager/laporan', [ReportController::class, 'index']);
     Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
+<<<<<<< HEAD
     Route::post('/manager/ruangan', [RuanganController::class, 'tambahRuangan']);
 
+=======
+    Route::get('/manager/cs', [CsController::class, 'tampilCS']);
+    Route::get('/manager/edit_cs', [CsController::class, 'tampileditCS']);
+=======
+Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
+Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
+Route::get('/manager/laporan', [ReportController::class, 'index']);
+Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
+>>>>>>> 0db802489b5b67fe0b5e7c4c722c1e89422b41b3
+>>>>>>> e0f5e68133fbb6207725b8c49a6bf13c53e240d3
 // });
 
-
+Route::get('/manager/detail_ruang', [DashboardManagerController::class, 'tampilDetailRuang']);
