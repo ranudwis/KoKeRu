@@ -45,35 +45,9 @@
                     <li class="active">
                         <a href="/cs/dashboard">Dashboard</a>
                     </li>
-                    <li class="nav-item has-treeview menu-open">
-                        <a href="#" class="nav-link active">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
-                          <p>
-                            Ruangan
-                            <i class="right fas fa-angle-left"></i>
-                          </p>
-                        </a>
-                        <ul class="nav nav-treeview" style="display: block;">
-                          <li class="nav-item">
-                            <a href="./index.html" class="nav-link active">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p>Ruang 1</p>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a href="./index2.html" class="nav-link">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p>Ruang 2</p>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p>Ruang 3</p>
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
+                    <li>
+                        <a href="#">Ruangan</a>
+                    </li>
                     <li>
                         <a href="#">Membuat Laporan</a>
                     </li>

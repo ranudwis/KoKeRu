@@ -18,11 +18,7 @@
                 <h1>{{ $r->nama }}</h1>
                 <h2>Status : {{ $loop->index % 2 == 0 ? 'Belum' : 'Sudah' }}</h2>
                 <h3>CS : {{ $r->cs->nama }}</h3>
-                @if($loop->index % 2 == 1)
-                    <a href="#">UPLOAD</a>
-                @else
-                @endif
-                
+                <a href="#">UPLOAD</a>
             </div>
         @endforeach
 
