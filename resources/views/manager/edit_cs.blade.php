@@ -2,25 +2,25 @@
 
 @section('content')
     <div class="card card-profil">
-        <div class="card-header" style="font-weight: bold;">Nama</div>
+        <div class="card-header" style="font-weight: bold;">{{ $cleanings -> nama }}</div>
         <div class="card-body">  
             <form method="post" action="">
                 @csrf
                 <table class="edit">
                     <tr>
                         <td>
-                            <input type="text" class="form-control" name="nama" autofocus placeholder="Nama" value="">
+                            <input type="text" class="form-control" name="nama" autofocus value="{{ $cleanings->nama }}">
                         </td>
                         <td style="margin-left: 20px">
-                            <input type="text" class="form-control" name="password" placeholder="Password">
+                            <input type="text" class="form-control" name="password">
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" class="form-control" name="email" placeholder="Email" value="">
+                            <input type="text" class="form-control" name="email"  value="{{ $cleanings->email }}">
                         </td>
                         <td>
-                            <input type="text" class="form-control" name="ruang" placeholder="Ruang">
+                            <input type="text" class="form-control" name="ruang" {{-- value="{{ $ruang->nama }}" --}}>
                         </td>
                     </tr>
                     <tr>

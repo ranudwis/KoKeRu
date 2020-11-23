@@ -17,10 +17,10 @@ class AuthenticationController extends Controller
         $emailPassword = $request->only('email', 'password');
 
         if (auth()->attempt($emailPassword)) {
-            if (auth()->user()->cs) {
+            if (auth()->user()->tipe_akun == "cs") {
                 return redirect()->intended('/cs/dashboard');
             }
-            else if (auth()->user()->manager) {
+            else if (auth()->user()->tipe_akun == "manager") {
                 return redirect()->intended('/manager/dashboard');
             }
 

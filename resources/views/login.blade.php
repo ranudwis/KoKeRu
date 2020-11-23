@@ -6,14 +6,15 @@
 	<div class="card">
 	  <div class="card-header">Log-in</div>
 	  <div class="card-body">
-	    <form name="login" method="post" action="{{ url('login') }}">
-            @csrf
-
-            @if ($errors->any())
+	  	@if ($errors->any())
                 @foreach ($errors->all() as $error)
                     {{ $error }}
                 @endforeach
             @endif
+	    <form name="login" method="post" action="{{ url('login') }}">
+            @csrf
+
+     
 
 	    	<table>
 	    		<tr>
