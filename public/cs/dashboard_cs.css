@@ -249,6 +249,24 @@ a.article:hover {
     justify-content: center;
 }
 
+.profil-cs {
+    padding: 0;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: rgb(142, 255, 255);
+    font-weight: bold;
+    border-bottom: 4px solid rgb(142, 255, 255);
+}
+
+.profil-cs .fotoCS {
+    margin-bottom: 10px;
+    max-width: 100px;
+    border-radius: 1000px;
+}
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
@@ -263,4 +281,56 @@ a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
+}
+
+/* ---------------------------------------------------
+    Pindahan dari manager/cs.css
+----------------------------------------------------- */
+
+.table-kategori {
+    width: 600px;
+    margin-top: 20px;
+    margin-left: 260px;
+}
+.fa-pencil-alt:hover {
+    color: #2196f3;
+    font-size: 18px;
+}
+.fa-trash-alt {
+    color: #e53935;
+}
+
+.fa-trash-alt:hover {
+    color: red;
+    font-size: 18px;
+}
+.table-hover tr:hover td {
+    background: #c5cae9;
+    font-weight: bold;
+}
+
+.card-profil {
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 60%;
+    background-color: #c5cae9;
+}
+.form-control {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    border-radius: 2px;
+}
+
+.btn-edit {
+    margin-top: 10px;
+    margin-left: 500px;
+    border-radius: 2px;
+}
+
+.card-header {
+    background-color: #7986cb;
+}
+
+.edit {
+    width: 80%;
 }

@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 
 class CsController extends Controller
 {
-    public function tampilCS() {
+    public function tampilCS()
+    {
         return view('manager.cs');
     }
-    public function tampileditCS(){
-    	return view('manager.edit_cs');
+    public function tampileditCS()
+    {
+        return view('manager.edit_cs');
     }
+}
     // public function hapusCs() {
     // 	$kategori = Kategori::find($idkategori);
     // 	if ($kategori) {

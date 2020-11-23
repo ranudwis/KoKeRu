@@ -8,8 +8,7 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('manager/manager.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('manager/cs.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('cs/dashboard_cs.css') }}">
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
@@ -37,18 +36,46 @@
                 <div class="sidebar-header">
                     <h3>KoKeRu Sidebar</h3>
                 </div>
+                <div class="profil-cs">
+                    <img class="fotoCS" src="{{ Storage::url('fotoCS.jpg') }}" alt="kamar">
+                    <h5>Bambang Mulyono</h5>
+                </div>
+                
                 <ul class="list-unstyled components">
                     <li class="active">
-                        <a href="/manager/dashboard">Dashboard</a>
+                        <a href="/cs/dashboard">Dashboard</a>
                     </li>
+                    <li class="nav-item has-treeview menu-open">
+                        <a href="#" class="nav-link active">
+                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <p>
+                            Ruangan
+                            <i class="right fas fa-angle-left"></i>
+                          </p>
+                        </a>
+                        <ul class="nav nav-treeview" style="display: block;">
+                          <li class="nav-item">
+                            <a href="./index.html" class="nav-link active">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>Ruang 1</p>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="./index2.html" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>Ruang 2</p>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="./index3.html" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>Ruang 3</p>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
                     <li>
-                        <a href="/manager/ruangan">Ruangan</a>
-                    </li>
-                    <li>
-                        <a href="/manager/cs">Cleaning Service</a>
-                    </li>
-                    <li>
-                        <a href="/manager/laporan">Membuat Laporan</a>
+                        <a href="#">Membuat Laporan</a>
                     </li>
                 </ul>
             </nav>
@@ -63,7 +90,7 @@
                         <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <i class="fas fa-align-justify"></i>
                         </button>
-                        <h3 style="padding-left:10px">Dashboard Manager</h3>
+                        <h3 style="padding-left:10px">Dashboard Cleaning Service</h3>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item active">
