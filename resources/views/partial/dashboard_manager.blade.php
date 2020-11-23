@@ -6,7 +6,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html lang="en">
 <head>
     <meta charset="utf-8">
-<<<<<<< HEAD
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <!-- Font Awesome Icons -->
@@ -14,7 +13,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ @asset('dist/css/adminlte.min.css') }}">
     <!-- jQuery -->
-=======
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Bootstrap CSS CDN -->
@@ -26,7 +24,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
      <!-- jQuery CDN - Slim version (=without AJAX) -->
->>>>>>> e0f5e68133fbb6207725b8c49a6bf13c53e240d3
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Bootstrap 4 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
@@ -37,7 +34,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <title>Dashboard Manager</title>
 </head>
-<<<<<<< HEAD
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <!-- Navbar -->
@@ -69,7 +65,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="info">
                         <a href="{{ url('manager/dashboard') }}" class="d-block">Dashboard</a>
                     </div>
-=======
 <body>
     <div class="container-fluid p-0 dashboard">
         <div class="wrapper">
@@ -77,7 +72,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <nav id="sidebar">
                 <div class="sidebar-header">
                     <h3>KoKeRu Sidebar</h3>
->>>>>>> e0f5e68133fbb6207725b8c49a6bf13c53e240d3
                 </div>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
@@ -109,9 +103,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </li>
                 </ul>
             </nav>
-<<<<<<< HEAD
             <!-- /.sidebar-menu -->
-=======
 
             <!-- Page Content  -->
             <div id="content">
@@ -138,7 +130,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     @yield('content')
                 </div>
             </div>
->>>>>>> e0f5e68133fbb6207725b8c49a6bf13c53e240d3
         </div>
         <!-- /.sidebar -->
     </aside>
@@ -148,7 +139,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         @yield('content')
     <!-- /.content-header -->
     </div>
-<<<<<<< HEAD
     <!-- /.content-wrapper -->
 
     <!-- Main Footer -->
@@ -162,7 +152,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </footer>
 </div>
 <!-- ./wrapper -->
-=======
->>>>>>> e0f5e68133fbb6207725b8c49a6bf13c53e240d3
 </body>
 </html>

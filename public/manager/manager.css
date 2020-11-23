@@ -1,6 +1,5 @@
 //ruangan
 body {
-<<<<<<< HEAD
     color: #404E67;
     background: #F5F7FA;
     font-family: 'Open Sans', sans-serif;
@@ -166,7 +165,6 @@ a[aria-expanded="true"] {
 }
 
 a[data-toggle="collapse"] {
->>>>>>> e0f5e68133fbb6207725b8c49a6bf13c53e240d3
     position: relative;
     top: 3px;
 }    
@@ -183,7 +181,6 @@ table.table .form-control.error {
 table.table td .add {
     display: none;
 }
-=======
 
 .dropdown-toggle::after {
     display: block;
@@ -344,4 +341,4 @@ a.article:hover {
         display: none;
     }
 }
->>>>>>> e0f5e68133fbb6207725b8c49a6bf13c53e240d3
+

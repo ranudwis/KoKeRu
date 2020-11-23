@@ -12,15 +12,13 @@
         @endforeach
         @endif
 
-<<<<<<< HEAD
     <div class="row flexing">
         <div class="container ruang ruang_sudah">
             <h1></h1>
             <h2>Status : SUDAH</h2>
             <h3></h3>
             <a href="#"></a>
-               
-=======
+
         <div class="row flexing">
 
             {{--<div class="container ruang ruang_sudah">
@@ -54,7 +52,6 @@
             <h1>R.305</h1>
             <h2>Status : BELUM</h2>
             <h3>CS : Bambang</h3>
->>>>>>> e0f5e68133fbb6207725b8c49a6bf13c53e240d3
         </div>
         <div class="container ruang ruang_sudah">
             <h1>R.306</h1>
