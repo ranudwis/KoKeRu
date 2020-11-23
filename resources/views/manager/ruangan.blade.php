@@ -16,15 +16,15 @@ $(document).ready(function(){
             '<td><input type="text" class="form-control" name="cs" id="cs"></td>' +
             '<td><button class="btn btn-primary" type="submit">Save</button></td>'
         '</form></tr>';
-        $("table").append(row);     
+        $("table").append(row);
         $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
         $('[data-toggle="tooltip"]').tooltip();
     });
     // Edit row on edit button click
-    $(document).on("click", ".edit", function(){        
+    $(document).on("click", ".edit", function(){
         $(this).parents("tr").find("td:not(:last-child)").each(function(){
             $(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
-        });     
+        });
         $(this).parents("tr").find(".add, .edit").toggle();
         $(".add-new").attr("disabled", "disabled");
     });
@@ -47,55 +47,35 @@ $(document).ready(function(){
                         </div>
                     </div>
                 </div>
-                <table class="table table-bordered">
+                <table class="table">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Nama</th>
-                            <th>Cleaning Service</th>
-                            <th>Actions</th>
+                            <th scope="col">No Ruang</th>
+                            <th scope="col">Nama CS</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($ruang as $r)
-                        <tr>
-                            <td>{{ $ruang->nama }}</td>
-                            <td>{{ $ruang->cs->nama }}</td>
-                            <td>
-                                <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                                <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>{{ $r->nama }}</td>
+                                <td>{{ $r->cs->nama }}</td>
+                                <td style="display: flex">
+                                    <a href="/" class="btn btn-success">Edit</a>
+                                    <form action="/" method="POST" style="margin-left:5px">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="submit" value="Hapus" class="btn btn-danger">
+                                    </form>
+                                </td>
+                            </tr>
                         @endforeach
+                    </tbody>
                 </table>
             </div>
         </div>
-    </div>  
-@endsection   
+    </div>
+@endsection
 =======
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">No Ruang</th>
-            <th scope="col">Nama CS</th>
-            <th scope="col">Action</th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach ($ruang as $r)
-        <tr>
-            <td>{{ $r->nama }}</td>
-            <td>{{ $r->cs->nama }}</td>
-            <td style="display: flex">
-                <a href="/" class="btn btn-success">Edit</a>
-                <form action="/" method="POST" style="margin-left:5px">
-                    @csrf
-                    @method('DELETE')
-                    <input type="submit" value="Hapus" class="btn btn-danger">
-                </form>
-            </td>
-        </tr>
-    @endforeach
-</table>
 @endsection
 >>>>>>> 58d21326b624894dcbddc4b812979a4452d7dfab
