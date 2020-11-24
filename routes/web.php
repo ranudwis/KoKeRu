@@ -42,7 +42,7 @@ Route::get('/manager/cs', [CsController::class, 'tampilCS']);
 Route::get('/manager/edit_cs/{id}', [CsController::class, 'tampileditCS']);
 Route::post('/manager/edit_cs/{id}', [CsController::class, 'editCS']);
 Route::get('/manager/hapus_cs/{id}', [CsController::class, 'hapusCS']);
-
+Route::get('/manager/tampil_cs/', [CsController::class, 'tampiltambahCS']);
 
 // CS
 Route::get('/cs/dashboard', [DashboardCsController::class, 'ruanganCS']);

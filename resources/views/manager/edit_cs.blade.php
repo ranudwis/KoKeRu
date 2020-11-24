@@ -2,8 +2,11 @@
 
 @section('content')
     <div class="card card-profil">
-        <div class="card-header" style="font-weight: bold;">{{ $cleanings -> nama }}</div>
-        <div class="card-body">  
+        <div class="card-header" style="font-weight: bold;">
+            <a href="/manager/cs"><i class="fas fa-arrow-left"></i></a>
+            {{ $cleanings -> nama }}
+        </div>
+        <div class="card-body card-body-profil">  
             <form method="post" action="">
                 @csrf
                 <table class="edit">
@@ -20,14 +23,16 @@
                             <input type="text" class="form-control" name="email"  value="{{ $cleanings->email }}">
                         </td>
                         <td>
-                            <input type="text" class="form-control" name="ruang" {{-- value="{{ $ruang->nama }}" --}}>
+                            <select name="ruang" multiple>
+                               {{-- @foreach ($ruang as $r)
+                                    <option value="{{ $r->id }}">{{ $r->nama }}</option>
+                                @endforeach --}}
+                            </select>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="4">
-                            <center>
-                                <button type="submit" class="btn btn-primary btn-edit" name="submit" value="submit">Edit</button>
-                            </center>
+                        <td colspan="2">
+                            <button type="submit" class="btn btn-primary btn-edit" name="submit" value="submit">Edit</button>
                         </td>
                     </tr>
                 </table>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\Ruang;
 
@@ -26,16 +27,15 @@ class CsController extends Controller
         'nama' => ['required', 'max:30'],
         'email' => ['required','email'],
         'password'=> ['nullable'],
-        'ruang' => ['required'],
         ]);
         $cleanings = User::find($id);
         $cleanings->nama =$request->nama;
         $cleanings->email =$request->email;
+        // $cs->ruang()->sync(array id);
+        $cs = $request->nama;
         if ($request->password) {
             $cleanings->password = Hash::make($request->password);
          }
-         // $ruang = Ruang::find($id);
-         // $ruang->nama = $request->nama;
 
         $cleanings->save();
         return redirect('/manager/cs');
@@ -50,5 +50,9 @@ class CsController extends Controller
         return redirect('/manager/cs');
     }
 
+    public function tampiltambahCS(Request $request)
+    {
+        return view('manager.tambah_cs');
+    }
 
 }

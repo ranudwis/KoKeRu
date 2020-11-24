@@ -15,7 +15,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link href="{{ asset('fontawesome/css/all.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
     {{-- <link rel="stylesheet" type="text/css" href="{{ asset('manager/manager.css') }}"> --}}
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('manager/cs.css') }}"> --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('manager/cs.css') }}">
     <!-- Theme style -->
 </head>
 <body class="hold-transition sidebar-mini">
@@ -162,7 +162,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/manager/cs" class="nav-link">
                             <i class="fas fa-people-carry"></i>
                             <p>
                                 Cleaning Service
