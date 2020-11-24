@@ -14,8 +14,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Font Awesome Icons -->
     <link href="{{ asset('fontawesome/css/all.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('manager/manager.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('manager/cs.css') }}"> --}}
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('manager/manager.css') }}"> --}}
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('manager/cs.css') }}"> --}}
     <!-- Theme style -->
 </head>
 <body class="hold-transition sidebar-mini">

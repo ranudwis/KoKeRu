@@ -46,3 +46,6 @@ Route::get('/manager/hapus_cs/{id}', [CsController::class, 'hapusCS']);
 
 // CS
 Route::get('/cs/dashboard', [DashboardCsController::class, 'ruanganCS']);
+// Route::get('/cs/upload/{id}', [DashboardCsController::class, 'uploadCS']);
+Route::get('/cs/upload', [DashboardCsController::class, 'uploadCS']);
+Route::post('/cs/upload', [DashboardCsController::class, 'buktiCS']);
