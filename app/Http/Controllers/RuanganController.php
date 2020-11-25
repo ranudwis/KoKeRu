@@ -22,7 +22,14 @@ class RuanganController extends Controller
         $ruang->nama = $request->nama;
         $ruang->save();
 
-
         return back();
+    }
+
+    public function tampilEditRuangan($id) {
+        
+    }
+
+    public function hapusRuangan() {
+
     }
 }

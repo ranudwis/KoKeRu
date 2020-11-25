@@ -2,7 +2,6 @@
 
 @section('content')
 
-<<<<<<< HEAD
 <script>
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
@@ -76,6 +75,4 @@ $(document).ready(function(){
         </div>
     </div>
 @endsection
-=======
-@endsection
->>>>>>> 58d21326b624894dcbddc4b812979a4452d7dfab
+
