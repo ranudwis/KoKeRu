@@ -15,7 +15,7 @@ class BuatTabelRuang extends Migration
     {
         Schema::create('ruang', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('nama');
             $table->timestamps();
         });

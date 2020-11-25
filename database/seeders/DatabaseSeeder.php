@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(ManagerAccountSeeder::class);
         $this->call(RuangSeeder::class);
+        $this->call(EmptyRoomSeeder::class);
     }
 }
