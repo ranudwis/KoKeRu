@@ -11,22 +11,20 @@ class DashboardCsController extends Controller
 {
     public function ruanganCS()
     {
+        // $user = auth()->user();
+
         $ruang = Ruang::all();
         return view('cs.ruang_cs', compact('ruang'));
     }
 
-    // public function uploadCS($id)
-    // {
-    //     $ruang = Ruang::find($id);
-    //     return view('cs.upload', compact('ruang'));
-    // }
-
-    public function uploadCS()
+    public function showCS($id)
     {
-        return view('cs.upload');
+        $ruang = Ruang::find($id);
+        // $bukti = Bukti::find($id);
+        return view('cs.upload', compact('ruang'));
     }
 
-    public function buktiCS(Request $request)
+    public function storeCS(Request $request, $id)
     {
 
         $request->validate([
@@ -35,20 +33,21 @@ class DashboardCsController extends Controller
 
         $ruang = Ruang::find($id);
 
-        if ($ruang->laporan()->where('created_at', new DateTime())->isExists()) {
-            $laporan = new Laporan();
-            $ruang->laporan()->save($laporan);
-            $laporan->id;
-            $laporan->bukti()->save($bukti);
-        }
-
         $bukti = new Bukti();
         $bukti->bukti = $request->gambar->store('public/post');
         $bukti->created_at = new \DateTime();
         $bukti->updated_at = new \DateTime();
 
+        if ($ruang->laporan()->where('created_at', new \DateTime())->get()->isEmpty()) {
+            $laporan = new Laporan();
+            $laporan->user_id = auth()->id();
+            $ruang->laporan()->save($laporan);
+            $laporan->id;
+            $laporan->bukti()->save($bukti);
+        }
+
         $bukti->save();
 
-        return redirect('cs/upload');
+        return back();
     }
 }
