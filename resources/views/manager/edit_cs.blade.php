@@ -14,20 +14,29 @@
                         <td>
                             <input type="text" class="form-control" name="nama" autofocus value="{{ $cleanings->nama }}">
                         </td>
-                        <td style="margin-left: 20px">
-                            <input type="text" class="form-control" name="password">
+                        <td rowspan="3">
+                            @foreach ($cleanings->ruang as $r)
+                                <option value="select" style="margin-left: 20px">Ruang Sekarang: {{ $r->nama}}</option>
+                            @endforeach
+                            <label style="margin-left: 20px">Pilih Ruang:</label>
+                            <select name="ruang" multiple class="form-control" style="height: 110px;">
+                                @foreach ($cleanings->ruang as $r)
+                                    <option value="select">{{ $r->nama}}</option>
+                                @endforeach
+                                @foreach ($ruang as $r)
+                                    <option value="{{ $r->id }}">{{ $r->nama }}</option>
+                                @endforeach
+                            </select>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <input type="text" class="form-control" name="email"  value="{{ $cleanings->email }}">
                         </td>
-                        <td>
-                            <select name="ruang" multiple>
-                               {{-- @foreach ($ruang as $r)
-                                    <option value="{{ $r->id }}">{{ $r->nama }}</option>
-                                @endforeach --}}
-                            </select>
+                    </tr>
+                    <tr>
+                        <td style="margin-left: 20px">
+                            <input type="text" class="form-control" name="password" placeholder="Password">
                         </td>
                     </tr>
                     <tr>
