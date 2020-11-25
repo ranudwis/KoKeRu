@@ -33,16 +33,20 @@ class DashboardCsController extends Controller
             'gambar' => ['required', 'image'],
         ]);
 
+        $ruang = Ruang::find($id);
 
-        // $penulis = auth()->user()->penulis;
+        if ($ruang->laporan()->where('created_at', new DateTime())->isExists()) {
+            $laporan = new Laporan();
+            $ruang->laporan()->save($laporan);
+            $laporan->id;
+            $laporan->bukti()->save($bukti);
+        }
 
         $bukti = new Bukti();
         $bukti->bukti = $request->gambar->store('public/post');
-        // $bukti->id_laporan = $request->laporan; -------
         $bukti->created_at = new \DateTime();
         $bukti->updated_at = new \DateTime();
 
-        // $bukti->idpenulis = auth()->user()->penulis->idpenulis;
         $bukti->save();
 
         return redirect('cs/upload');
