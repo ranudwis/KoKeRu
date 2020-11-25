@@ -46,6 +46,5 @@ Route::get('/manager/tampil_cs/', [CsController::class, 'tampiltambahCS']);
 
 // CS
 Route::get('/cs/dashboard', [DashboardCsController::class, 'ruanganCS']);
-// Route::get('/cs/upload/{id}', [DashboardCsController::class, 'uploadCS']);
-Route::get('/cs/upload', [DashboardCsController::class, 'uploadCS']);
-Route::post('/cs/upload', [DashboardCsController::class, 'buktiCS']);
+Route::get('/cs/upload/{id}', [DashboardCsController::class, 'showCS']);
+Route::post('/cs/upload/{id}', [DashboardCsController::class, 'storeCS']);

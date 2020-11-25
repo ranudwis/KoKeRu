@@ -11,7 +11,7 @@ class Laporan extends Model
 
     protected $table = 'laporan';
 
-    public function bukei()
+    public function bukti()
     {
         return $this->hasMany(Bukti::class, 'id_laporan');
     }
