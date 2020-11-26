@@ -22,9 +22,9 @@
     <h4>Hari Minggu</h3>
 
         @if ($errors->any())
-        @foreach ($errors->all() as $e)
-        <div>{{ $e }}</div>
-        @endforeach
+            @foreach ($errors->all() as $e)
+                <div>{{ $e }}</div>
+            @endforeach
         @endif
 
         <div class="row flexing">

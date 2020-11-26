@@ -11,8 +11,7 @@ class DashboardCsController extends Controller
 {
     public function ruanganCS()
     {
-        // $user = auth()->user();
-
+        $user = auth()->user();
         $ruang = Ruang::all();
         return view('cs.ruang_cs', compact('ruang'));
     }
@@ -20,8 +19,10 @@ class DashboardCsController extends Controller
     public function showCS($id)
     {
         $ruang = Ruang::find($id);
-        // $bukti = Bukti::find($id);
-        return view('cs.upload', compact('ruang'));
+
+        $laporan = Laporan::where('id_ruang', $id)->where('created_at', new \DateTime())->first();
+
+        return view('cs.upload', compact('ruang', 'laporan'));
     }
 
     public function storeCS(Request $request, $id)
