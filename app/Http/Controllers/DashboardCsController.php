@@ -11,8 +11,7 @@ class DashboardCsController extends Controller
 {
     public function ruanganCS()
     {
-        // $user = auth()->user();
-
+        $user = auth()->user();
         $ruang = Ruang::all();
         return view('cs.ruang_cs', compact('ruang'));
     }

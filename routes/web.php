@@ -30,6 +30,10 @@ Route::view('login', 'login');
 Route::post('login', [AuthenticationController::class, 'login']);
 
 Route::get('/', [HomeController::class, 'home']);
+Route::get('/logout', function () {
+    auth()->logout();
+    return redirect('/');
+});
 
 // Manager
 Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
