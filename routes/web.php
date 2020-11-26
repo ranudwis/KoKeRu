@@ -25,18 +25,27 @@ use App\Http\Controllers\DashboardCsController;
 |
 */
 
-
+//login
 Route::view('login', 'login');
 Route::post('login', [AuthenticationController::class, 'login']);
 
+//home
 Route::get('/', [HomeController::class, 'home']);
 
 // Manager
 Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
 Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
 Route::get('/manager/laporan', [ReportController::class, 'index']);
+
+//Ruangan
 Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
-Route::post('/manager/ruangan', [RuanganController::class, 'tambahRuangan']);
+Route::get('/manager/tambah_ruangan', [RuanganController::class, 'tampiltambahRuangan']);
+Route::post('/manager/tambah_ruangan', [RuanganController::class, 'tambahRuangan']);
+Route::post('/manager/edit_ruangan/{id}', [RuanganController::class, 'editRuangan']);
+Route::get('/manager/edit_ruangan/{id}', [RuanganController::class, 'tampileditRuangan']);
+Route::get('/manager/hapus_ruangan/{id}', [RuanganController::class, 'hapusRuangan']);
+
+//CS
 Route::get('/manager/detail_ruang', [DashboardManagerController::class, 'tampilDetailRuang']);
 Route::get('/manager/cs', [CsController::class, 'tampilCS']);
 Route::get('/manager/edit_cs/{id}', [CsController::class, 'tampileditCS']);

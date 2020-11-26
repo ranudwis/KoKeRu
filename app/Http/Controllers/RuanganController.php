@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ruang;
+use App\Models\User;
 
 class RuanganController extends Controller
 {
@@ -11,6 +12,12 @@ class RuanganController extends Controller
         $ruang = Ruang::all();
 
         return view('manager.ruangan', compact('ruang'));
+    }
+
+    public function tampiltambahRuangan()
+    {
+
+        return view('manager.tambah_ruangan');
     }
 
     public function tambahRuangan(Request $request) {
@@ -22,14 +29,35 @@ class RuanganController extends Controller
         $ruang->nama = $request->nama;
         $ruang->save();
 
-        return back();
+        return redirect('/manager/ruangan');
     }
 
-    public function tampilEditRuangan($id) {
-        
+    public function editRuangan(Request $request, $id) {
+        $request->validate([
+            'nama' => ['required'],
+        ]);
+
+        $ruang = Ruang::find($id);
+        $ruang->nama = $request->nama;
+
+        $ruang->save();
+        return redirect('/manager/ruangan');
     }
 
-    public function hapusRuangan() {
+     public function tampileditRuangan($id)
+    {
+        $ruang = Ruang::find($id);
 
+
+        return view('manager.edit_ruangan', compact('ruang'));
+    }
+
+     public function hapusRuangan($id) {
+        $ruang = Ruang::find($id);
+        if ($ruang) {
+            $ruang->delete();
+        }
+
+        return redirect('/manager/ruangan');
     }
 }
