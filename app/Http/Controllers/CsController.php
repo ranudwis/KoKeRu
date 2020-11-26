@@ -18,7 +18,8 @@ class CsController extends Controller
     public function tampileditCS($id)
     {
         $cleanings = User::find($id);
-        return view('manager.edit_cs', compact('cleanings'));
+        $ruang = Ruang::whereDoesntHave('cs')->get();
+        return view('manager.edit_cs', compact('cleanings','ruang'));
     }
 
     public function editCS(Request $request, $id)
@@ -27,15 +28,17 @@ class CsController extends Controller
         'nama' => ['required', 'max:30'],
         'email' => ['required','email'],
         'password'=> ['nullable'],
+        // 'ruang'=>['required'],
         ]);
         $cleanings = User::find($id);
         $cleanings->nama =$request->nama;
         $cleanings->email =$request->email;
-        // $cs->ruang()->sync(array id);
         $cs = $request->nama;
         if ($request->password) {
             $cleanings->password = Hash::make($request->password);
          }
+        // $cleanings as ruang-> $ruang;
+        // $ruang->nama =$request->ruang;
 
         $cleanings->save();
         return redirect('/manager/cs');

@@ -15,12 +15,15 @@
         <h4>DAFTAR CLEANING SERVICE</h4>
         <table class="table table-hover table-kategori">
             @foreach ($cleanings as $cs)
-            <tr class="tr-warna">
-                <td style="width: 550px">{{ $cs->nama }}</td>
-                <td><a href="{{ url('/manager/edit_cs/' . $cs->id) }}"><i class="fas fa-pencil-alt"></i></a></td>
-                <td><a href="{{ url('/manager/hapus_cs/' . $cs->id) }}" onclick="return konfirmasi()" id="pesan"><i class="fas fa-trash-alt"></i></a></td>
-            </tr>
-             @endforeach
+                @foreach ($cs->ruang as $ruang)
+                <tr class="tr-warna">
+                    <td style="width: 250px">{{ $cs->nama }}</td>
+                    <td style="width: 230px;">{{ $ruang->nama }}</td>
+                    <td><a href="{{ url('/manager/edit_cs/' . $cs->id) }}"><i class="fas fa-pencil-alt"></i></a></td>
+                    <td><a href="{{ url('/manager/hapus_cs/' . $cs->id) }}" onclick="return konfirmasi()" id="pesan"><i class="fas fa-trash-alt"></i></a></td>
+                </tr>
+                 @endforeach
+            @endforeach
         </table>
     </center> 
 

@@ -28,12 +28,13 @@
 	background-color: #C5CAE9;
 }
 .card-body-profil{
-	padding-right: 60px;
+	padding-right: 30px;
 }
 .form-control{
 	margin-bottom: 10px;
 	margin-left: 20px;
 	border-radius: 2px;
+	width: 90%;
 }
 .btn-edit{
 	margin-top: 10px;
