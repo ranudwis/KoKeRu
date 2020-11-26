@@ -21,23 +21,24 @@
                             Submit
                         </button>
                     </div>
+                </form>
             </div>
 
             <div class="row gambar_bukti">
-                {{-- @foreach ($bukti as $b)
-                    <div class="bukti_foto">
-                        <img class="foto" src="{{ Storage::url($b->bukti) }}" alt="kamar">
-                        <form action="" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <input type="submit" value="Hapus" class="btn btn-danger btn-md">
-                        </form>
-                    </div> --}}
-                    <div class="bukti_foto">
-                        <img class="foto" src="{{ Storage::url('hotel.jpg') }}" alt="kamar">
-                        <a href="#">Hapus Bukti</a>
-                    </div>
-                {{-- @endforeach --}}
+                @if ($laporan == null || $laporan->bukti->count() == 0)
+                    <h1>Belum ada bukti</h1>
+                @else
+                    @foreach ($laporan as $l)
+                        <div class="bukti_foto">
+                            <img class="foto" src="{{ Storage::url($l->bukti) }}" alt="kamar">
+                            <form action="" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" value="Hapus" class="btn btn-danger btn-md">
+                            </form>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>
