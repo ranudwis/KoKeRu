@@ -14,11 +14,14 @@
                         <span class="fa fa-user"></span>
                     </span>                    
                 </div>
-                <input type="text" class="form-control" name="nama" placeholder="Nama Ruangan" required="required">
+                <input type="text" class="form-control" name="nama"placeholder="Nama Ruangan" required="required">
             </div>
         </div>     
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-edit" name="submit" value="submit"><i class="fas fa-plus"></i>Tambah</button>
-        </div>
+        <center>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" name="submit" value="submit">Simpan</button>
+                <a href="/manager/ruangan" class="btn btn-danger">Cancel</a>
+            </div>
+        </center>
 </div>
 @endsection

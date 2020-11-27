@@ -27,8 +27,8 @@ class RuanganController extends Controller
 
         $ruang = new Ruang();
         $ruang->nama = $request->nama;
+        
         $ruang->save();
-
         return redirect('/manager/ruangan');
     }
 

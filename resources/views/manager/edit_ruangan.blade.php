@@ -17,8 +17,11 @@
                 <input type="text" class="form-control" name="nama" autofocus value="{{ $ruang->nama }}">
             </div>
         </div>     
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-edit" name="edit" value="submit"><i class="fas fa-plus"></i>Edit</button>
-        </div>
+        <center>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" name="edit" value="submit">Edit</button>
+                <a href="/manager/ruangan" class="btn btn-danger">Cancel</a>
+            </div>
+        </center>
 </div>
 @endsection

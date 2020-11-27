@@ -20,6 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     {{-- <link rel="stylesheet" type="text/css" href="{{ asset('manager/manager.css') }}"> --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('manager/cs.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('manager/ruangan.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('manager/crud_ruangan.css') }}">
     <!-- Theme style -->
 </head>
 <body class="hold-transition sidebar-mini">
@@ -46,14 +47,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="{{ @asset('dist/img/dashboard.png') }}" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="{{ url('manager/dashboard') }}" class="d-block">Dashboard</a>
-                    </div>
-                </div>
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <li class="nav-item">
+                        <a href="{{ url('manager/dashboard') }}" class="nav-link">
+                            <i class="far fa-list-alt"></i>
+                            <p>
+                                Dashboard
+                            </p>
+                        </a>
+                    </li>
+                </ul>
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
@@ -68,14 +71,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </li>
                     <li class="nav-item">
                         <a href="/manager/cs" class="nav-link">
-                            <i class="fas fa-people-carry"></i>
+                            <i class="fas fa-user"></i>
                             <p>
                                 Cleaning Service
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/manager/laporan" class="nav-link">
                             <i class="fas fa-book"></i>
                             <p>
                                 Membuat Laporan
@@ -129,7 +132,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Anything you want
             </div>
 
-            <strong>Copyright &copy; 2020 <a href="https://adminlte.io">CalonDokter.io</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; 2020 CalonDokter.io</a>.</strong> All rights reserved.
         </footer>
     </div>
 
