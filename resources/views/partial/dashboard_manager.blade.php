@@ -17,7 +17,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('manager/manager.css') }}"> --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('manager/dashboard.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('manager/cs.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('manager/ruangan.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('manager/crud_ruangan.css') }}">
@@ -125,17 +125,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
            
         </aside>
         <!-- /.control-sidebar -->
-
-        <!-- Main Footer -->
-        <footer class="main-footer">
-            <div class="float-right d-none d-sm-inline">
-                Anything you want
-            </div>
-
-            <strong>Copyright &copy; 2020 CalonDokter.io</a>.</strong> All rights reserved.
-        </footer>
-    </div>
-
    
 </body>
 </html>
