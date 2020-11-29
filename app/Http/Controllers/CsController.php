@@ -30,6 +30,7 @@ class CsController extends Controller
         'password'=> ['nullable'],
         // 'ruang'=>['required'],
         ]);
+
         $cleanings = User::find($id);
         $cleanings->nama =$request->nama;
         $cleanings->email =$request->email;
@@ -37,8 +38,12 @@ class CsController extends Controller
         if ($request->password) {
             $cleanings->password = Hash::make($request->password);
          }
-        // $cleanings as ruang-> $ruang;
-        // $ruang->nama =$request->ruang;
+        $cleanings->ruang()->update([
+          'user_id' => null
+        ]);
+        Ruang::whereIn('id', $request->ruang)->update([
+          'user_id' => $cleanings->id
+        ]);
 
         $cleanings->save();
         return redirect('/manager/cs');
