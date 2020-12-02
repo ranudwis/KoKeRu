@@ -55,7 +55,8 @@ Route::get('/manager/cs', [CsController::class, 'tampilCS']);
 Route::get('/manager/edit_cs/{id}', [CsController::class, 'tampileditCS']);
 Route::post('/manager/edit_cs/{id}', [CsController::class, 'editCS']);
 Route::get('/manager/hapus_cs/{id}', [CsController::class, 'hapusCS']);
-Route::get('/manager/tampil_cs/', [CsController::class, 'tampiltambahCS']);
+Route::get('/manager/tambah_cs', [CsController::class, 'tampiltambahCS']);
+Route::post('/manager/tambah_cs', [CsController::class, 'tambahCS']);
 
 // CS
 Route::get('/cs/dashboard', [DashboardCsController::class, 'ruanganCS']);
