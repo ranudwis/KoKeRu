@@ -34,48 +34,19 @@
         <button type="submit" class="btn btn-primary mb-2">Tampil</button>
     </form>
 
-    <div class="text-center mt-4">
-        <h4>
-            Laporan Harian Kebersihan dan Kerapihan Ruangan Gedung Bersama Maju<br />
-            Hari {{ $reportDate->isoFormat('dddd') }}
-            Tanggal {{ $reportDate->isoFormat('DD MMMM YYYY')}}
-        </h4>
-        <p>
-            << Tanggal Cetak {{ $now->isoFormat('DD MMMM YYYY') }} Jam {{ $now->isoFormat('HH:mm') }} WIB >>
+    <div class="mt-4">
+        <p class="text-right">
+            <a
+                href="{{
+                    url("manager/laporan/pdf?date={$reportDate}&status={$status}")
+                }}"
+                class="btn btn-primary"
+            >
+                <i class="far fa-file-pdf"></i>
+                Cetak
+            </a>
         </p>
+
+        @include('partial.reporttable')
     </div>
-
-    <table class="table">
-        <tr>
-            <th>
-                No
-            </th>
-            <th>
-                Ruang
-            </th>
-            <th>
-                Nama CS
-            </th>
-            <th>
-                Status
-            </th>
-        </tr>
-
-        @foreach ($rooms as $room)
-            <tr>
-                <td>
-                    {{ $loop->iteration }}
-                </td>
-                <td>
-                    {{ $room->nama }}
-                </td>
-                <td>
-                    {{ $room->cs->nama }}
-                </td>
-                <td>
-                    {{ $room->laporan_count == 0 ? 'Belum' : 'Sudah' }}
-                </td>
-            </tr>
-        @endforeach
-    </table>
 @endsection

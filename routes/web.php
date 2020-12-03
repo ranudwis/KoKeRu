@@ -40,8 +40,7 @@ Route::get('/logout', function () {
 Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
 Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
 Route::get('/manager/laporan', [ReportController::class, 'index']);
-
-//Ruangan
+Route::get('/manager/laporan/pdf', [ReportController::class, 'pdf']);
 Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
 Route::get('/manager/tambah_ruangan', [RuanganController::class, 'tampiltambahRuangan']);
 Route::post('/manager/tambah_ruangan', [RuanganController::class, 'tambahRuangan']);

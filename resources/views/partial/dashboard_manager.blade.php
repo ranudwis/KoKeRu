@@ -78,7 +78,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/manager/laporan" class="nav-link">
+                        <a href="{{ url('manager/laporan') }}" class="nav-link">
                             <i class="fas fa-book"></i>
                             <p>
                                 Membuat Laporan
@@ -98,7 +98,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
-                        
+
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
@@ -106,14 +106,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- Main content -->
             <div class="content">
-                @if ($errors->any())
-                    @foreach ($errors->all() as $error)
-                        <div>
-                            {{ $error }}
-                        </div>
-                    @endforeach
-                @endif
-                @yield('content')
+                <div class="container">
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $error)
+                            <div>
+                                {{ $error }}
+                            </div>
+                        @endforeach
+                    @endif
+
+                    @yield('content')
+                </div>
             </div>
             <!-- /.content -->
         </div>
@@ -122,9 +125,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->
-           
+
         </aside>
         <!-- /.control-sidebar -->
-   
+
 </body>
 </html>
