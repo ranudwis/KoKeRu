@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ruang;
+use App\Models\User;
 use Carbon\Carbon;
+use Dompdf\Dompdf;
 
 class ReportController extends Controller
 {
@@ -16,7 +18,7 @@ class ReportController extends Controller
     {
         $rooms = $this->queryRooms($request);
 
-        return view('manager/report', [
+        return view('manager.report', [
             'reportDate' => $this->reportDate,
             'now' => $this->now,
             'status' => $this->status,
@@ -27,7 +29,26 @@ class ReportController extends Controller
     public function pdf(Request $request)
     {
         $rooms = $this->queryRooms($request);
+        $manager = User::where('tipe_akun', 'manager')->first();
 
+        $view = view('manager.pdfreport', [
+            'reportDate' => $this->reportDate,
+            'now' => $this->now,
+            'status' => $this->status,
+            'rooms' => $rooms,
+            'manager' => $manager
+        ])->render();
+
+        $dompdf = new Dompdf();
+        $dompdf->getOptions()->setChroot(public_path());
+        $dompdf->loadHtml($view);
+
+        $dompdf->setPaper('A4');
+        $dompdf->render();
+
+        $filename = 'Laporan ' . $this->reportDate->isoFormat('DD MMMM YYYY')        ;
+
+        $dompdf->stream($filename);
     }
 
     private function queryRooms(Request $request)
