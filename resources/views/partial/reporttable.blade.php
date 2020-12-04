@@ -34,10 +34,10 @@
                 {{ $room->nama }}
             </td>
             <td>
-                {{ $room->cs->nama ?? '-' }}
+                {{ $room->getNamaCs() }}
             </td>
             <td>
-                {{ $room->laporan_count == 0 ? 'Belum' : 'Sudah' }}
+                {{ $room->getStatus() }}
             </td>
         </tr>
     @endforeach

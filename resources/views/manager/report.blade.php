@@ -42,8 +42,18 @@
                 }}"
                 class="btn btn-primary"
             >
-                <i class="far fa-file-pdf"></i>
+                <i class="far fa-fw fa-file-pdf"></i>
                 Cetak
+            </a>
+
+            <a
+                href="{{
+                    url("manager/laporan/excel?date={$reportDate}&status={$status}")
+                }}"
+                class="btn btn-primary"
+            >
+                <i class="far fa-fw fa-file-excel"></i>
+                Download
             </a>
         </p>
 

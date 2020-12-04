@@ -20,4 +20,14 @@ class Ruang extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function getNamaCs()
+    {
+        return $this->cs->nama ?? '-';
+    }
+
+    public function getStatus()
+    {
+        return $this->laporan_count == 0 ? 'Belum' : 'Sudah';
+    }
 }

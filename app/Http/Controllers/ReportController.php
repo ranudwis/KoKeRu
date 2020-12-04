@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ruang;
 use App\Models\User;
+use App\Exports\ReportExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Carbon\Carbon;
 use Dompdf\Dompdf;
 
@@ -13,6 +15,14 @@ class ReportController extends Controller
     private $reportDate;
     private $now;
     private $status;
+    private $filename;
+
+    public function __construct()
+    {
+        $this->reportDate = new Carbon();
+        $this->now = new Carbon();
+        $this->status = 'semua';
+    }
 
     public function index(Request $request)
     {
@@ -46,17 +56,19 @@ class ReportController extends Controller
         $dompdf->setPaper('A4');
         $dompdf->render();
 
-        $filename = 'Laporan ' . $this->reportDate->isoFormat('DD MMMM YYYY')        ;
+        $dompdf->stream($this->filename);
+    }
 
-        $dompdf->stream($filename);
+    public function excel(Request $request)
+    {
+        $rooms = $this->queryRooms($request);
+        $export = new ReportExport($this->reportDate, $rooms);
+
+        return Excel::download($export, $this->filename . '.xlsx');
     }
 
     private function queryRooms(Request $request)
     {
-        $this->reportDate = new Carbon();
-        $this->now = new Carbon();
-        $this->status = 'semua';
-
         if ($request->has('date') && $request->has('status')) {
             $this->reportDate = new Carbon($request->date);
             $this->status = $request->status;
@@ -74,6 +86,7 @@ class ReportController extends Controller
         }
 
         $rooms = $rooms->get();
+        $this->filename = 'Laporan ' . $this->reportDate->isoFormat('DD MMMM YYYY');
 
         return $rooms;
     }

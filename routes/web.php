@@ -41,6 +41,7 @@ Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDash
 Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
 Route::get('/manager/laporan', [ReportController::class, 'index']);
 Route::get('/manager/laporan/pdf', [ReportController::class, 'pdf']);
+Route::get('/manager/laporan/excel', [ReportController::class, 'excel']);
 Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
 Route::get('/manager/tambah_ruangan', [RuanganController::class, 'tampiltambahRuangan']);
 Route::post('/manager/tambah_ruangan', [RuanganController::class, 'tambahRuangan']);
