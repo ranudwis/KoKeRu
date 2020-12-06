@@ -31,42 +31,16 @@
 <body>
     <div class="container-fluid p-0 dashboard">
         <div class="wrapper">
-            <!-- Sidebar  -->
-            <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3>KoKeRu Sidebar</h3>
-                </div>
-                <div class="profil-cs">
-                    <img class="fotoCS" src="{{ Storage::url('fotoCS.jpg') }}" alt="kamar">
-                    <h5>Bambang Mulyono</h5>
-                </div>
-                
-                <ul class="list-unstyled components">
-                    <li class="active">
-                        <a href="/cs/dashboard">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#">Ruangan</a>
-                    </li>
-                    <li>
-                        <a href="#">Membuat Laporan</a>
-                    </li>
-                </ul>
-            </nav>
-
             <!-- Page Content  -->
             <div id="content">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
-                        <button type="button" id="sidebarCollapse" class="btn btn-info">
-                            <i class="fas fa-align-left"></i>
-                        </button>
-                        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="fas fa-align-justify"></i>
-                        </button>
                         <h3 style="padding-left:10px">Dashboard Cleaning Service</h3>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
+                                <li style="margin-right: 15px; color:rgb(0, 45, 128)">
+                                    <h3>{{ auth()->user()->nama }}</h3>
+                                </li>
                                 <li class="nav-item active">
                                     <a href="/logout" class="btn btn-danger btn-logout">Logout</a>
                                 </li>
