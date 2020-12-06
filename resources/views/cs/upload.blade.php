@@ -15,7 +15,7 @@
 
                 <form action="" method="POST"  enctype="multipart/form-data">
                     @csrf
-                    <input type="file" accept="image/*" name="gambar">
+                    <input type="file" accept="image/*" name="gambar[]" multiple>
                     <div class="form-group" style="margin-top: 10px">
                         <button type="submit" class="btn btn-primary">
                             Submit
@@ -28,7 +28,7 @@
                 @if ($laporan == null || $laporan->bukti->count() == 0)
                     <h1>Belum ada bukti</h1>
                 @else
-                    @foreach ($laporan as $l)
+                    @foreach ($laporan->bukti as $l)
                         <div class="bukti_foto">
                             <img class="foto" src="{{ Storage::url($l->bukti) }}" alt="kamar">
                             <form action="" method="POST">
