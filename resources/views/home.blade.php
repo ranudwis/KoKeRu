@@ -33,12 +33,12 @@
             <div class="container ruang {{ $loop->index % 2 == 0 ? 'ruang_belum' : 'ruang_sudah' }}">
                 <h1>{{ $r->nama }}</h1>
                 <h2>Status : {{ $loop->index % 2 == 0 ? 'Belum' : 'Sudah' }}</h2>
-                <h3>CS : {{ $r->cs->nama }}</h3>
+                <h3>CS : {{ $r->cs->nama ?? '-' }}</h3>
                 @if($loop->index % 2 == 1)
                     <a href="#">BUKTI</a>
                 @else
                 @endif
-                
+
             </div>
         @endforeach
 </div>
