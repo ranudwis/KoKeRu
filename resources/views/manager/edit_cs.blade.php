@@ -36,7 +36,7 @@
                     </tr>
                     <tr>
                         <td style="margin-left: 20px">
-                            <input type="text" class="form-control" name="password" placeholder="Password">
+                            <input type="password" class="form-control" name="password" placeholder="Password">
                         </td>
                     </tr>
                     <tr>
