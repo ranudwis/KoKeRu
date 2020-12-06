@@ -42,7 +42,8 @@
 	border-radius: 2px;
 }
 .card-header{
-	background-color: #7986CB;
+	float: left;
+    margin-top: 2px;
 }
 .edit{
 	width: 100%;
