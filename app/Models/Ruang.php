@@ -26,8 +26,12 @@ class Ruang extends Model
         return $this->cs->nama ?? '-';
     }
 
-    public function getStatus()
+    public function getStatus() {
+        return $this->laporan_count != 0;
+    }
+
+    public function getStatusString()
     {
-        return $this->laporan_count == 0 ? 'Belum' : 'Sudah';
+        return $this->getStatus() ? 'Sudah' : 'Belum';
     }
 }

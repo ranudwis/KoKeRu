@@ -14,11 +14,16 @@
         <div class="row flexing">
 
         @foreach ($ruang as $key => $r)
-            <div class="container ruang {{ $loop->index % 2 == 0 ? 'ruang_belum' : 'ruang_sudah' }}">
+            <div class="container ruang {{ $r->getStatus() ? 'ruang_sudah' : 'ruang_belum' }}">
                 <h1>{{ $r->nama }}</h1>
-                <h2>Status : {{ $loop->index % 2 == 0 ? 'Belum' : 'Sudah' }}</h2>
+                <h2>Status : {{ $r->getStatusString() }}</h2>
                 <h3>CS : {{ $r->cs->nama }}</h3>
-                <a href="/cs/upload/{{$r->id}}">UPLOAD</a>
+
+                @if ($r->getStatus())
+                    <a href="/cs/upload/{{ $r->id }}">UPLOAD</a>
+                @else
+                    <a href="/cs/upload/{{ $r->id }}">LIHAT</a>
+                @endif
             </div>
         @endforeach
 

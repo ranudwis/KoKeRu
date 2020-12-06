@@ -37,7 +37,7 @@
                 {{ $room->getNamaCs() }}
             </td>
             <td>
-                {{ $room->getStatus() }}
+                {{ $room->getStatusString() }}
             </td>
         </tr>
     @endforeach

@@ -11,7 +11,15 @@ class DashboardCsController extends Controller
 {
     public function ruanganCS()
     {
-        $ruang = auth()->user()->ruang;
+        $ruang = auth()->user()
+            ->ruang()
+            ->withCount([
+                'laporan' => function ($query) {
+                    $query->whereDate('created_at', new \DateTime());
+                }
+            ])
+            ->get();
+
         return view('cs.ruang_cs', compact('ruang'));
     }
 

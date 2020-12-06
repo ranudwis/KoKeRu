@@ -36,7 +36,7 @@ class ReportExport implements FromCollection, WithMapping, WithHeadings, ShouldA
         return [
             $room->nama,
             $room->getNamaCs(),
-            $room->getStatus()
+            $room->getStatusString()
         ];
     }
 
