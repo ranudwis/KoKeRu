@@ -39,6 +39,7 @@ Route::get('/logout', function () {
 // Manager
 Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
 Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
+Route::post('/manager/profile',[ManagerProfileController::class, 'editProfil']);
 Route::get('/manager/laporan', [ReportController::class, 'index']);
 Route::get('/manager/laporan/pdf', [ReportController::class, 'pdf']);
 Route::get('/manager/laporan/excel', [ReportController::class, 'excel']);
