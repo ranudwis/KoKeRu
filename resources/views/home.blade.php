@@ -1,10 +1,9 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ asset('manager/manager.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('home.css') }}">
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <h1 style="padding-left:10px; color:blue; font-weight:bold">KoKeRu</h1>

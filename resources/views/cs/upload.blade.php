@@ -30,7 +30,7 @@
                 @else
                     @foreach ($laporan as $l)
                         <div class="bukti_foto">
-                            <img class="foto" src="{{ Storage::url($l->bukti) }}" alt="kamar">
+                            <img class="foto" src="{{ Storage::url($l->$bukti->bukti) }}" alt="kamar">
                             <form action="" method="POST">
                                 @csrf
                                 @method('DELETE')
