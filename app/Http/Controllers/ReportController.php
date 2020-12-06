@@ -94,7 +94,7 @@ class ReportController extends Controller
     private function reportDateQuery()
     {
         return function ($query) {
-            $query->where('created_at', $this->reportDate);
+            $query->whereDate('created_at', $this->reportDate);
         };
     }
 }
