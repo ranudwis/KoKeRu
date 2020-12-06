@@ -76,13 +76,12 @@ class CsController extends Controller
         $cleanings->email =$request->email;
         $cleanings->password = Hash::make($request->password);
 
-
+        $cleanings->save();
         //masih ngga bisa, update ngga tau diganti apa
         Ruang::whereIn('id', $request->ruang)->update([
           'user_id' => $cleanings->id
         ]);
 
-        $cleanings->save();
         return redirect('/manager/cs');
     }
 
