@@ -1,7 +1,8 @@
 @extends('partial.dashboard_manager')
 
 @section('content')
-    <form method="get" action="{{ url('manager/laporan') }}">
+
+<form method="get" action="{{ url('manager/laporan') }}">
         @csrf
 
         <div class="form-group">
@@ -77,5 +78,6 @@
                 </td>
             </tr>
         @endforeach
-    </table>
+    </table>   
+
 @endsection
