@@ -1,32 +1,54 @@
 @extends('partial.dashboard_manager')
 
 @section('content')
-    <form method="post" action="/manager/tampil_cs">
-        @csrf
-        <table style="margin-top: 20px">
-            <tr>
-                <td style="padding-left:50px;padding-bottom: 10px">
-                    <button class="btn btn-primary btn-tambahCS" type="submit" style="border-radius: 2px;"><i class="fas fa-plus"></i> Tambah Cleaning Service</button>
-                </td>
-            </tr>
-        </table>
-    </form>
-    <center>
-        <h4>DAFTAR CLEANING SERVICE</h4>
-        <table class="table table-hover table-kategori">
-            @foreach ($cleanings as $cs)
-                @foreach ($cs->ruang as $ruang)
-                <tr class="tr-warna">
-                    <td style="width: 250px">{{ $cs->nama }}</td>
-                    <td style="width: 230px;">{{ $ruang->nama }}</td>
-                    <td><a href="{{ url('/manager/edit_cs/' . $cs->id) }}"><i class="fas fa-pencil-alt"></i></a></td>
-                    <td><a href="{{ url('/manager/hapus_cs/' . $cs->id) }}" onclick="return konfirmasi()" id="pesan"><i class="fas fa-trash-alt"></i></a></td>
-                </tr>
-                 @endforeach
-            @endforeach
-        </table>
-    </center> 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h2>Detail <b>Cleaning Service</b></h2>
+                    </div>
+                    <div class="col-sm-8">
+                        <a href="{{ url('/manager/tambah_cs') }}" class="btn btn-secondary"><i class="fas fa-plus"></i> Tambah Cleaning Service</a>
+                    </div>
+                </div>
+            </div>
+            @csrf
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Nama</th>                       
+                        <th>Ruang</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  @foreach ($cleanings as $cs)
+                    <tr>
+                        <td style="width: 250px">{{ $cs->nama }}</td>
+                        <td style="width: 230px;">
+                          @foreach ($cs->ruang as $ruang)
+                            {{ $ruang->nama }}<br>
+                          @endforeach
+                        </td>
+                        <td>
+                          <a href="{{ url('/manager/edit_cs/' . $cs->id) }}" data-toggle="tooltip"><i class="fas fa-pencil-alt"></i></a>
+                          <a href="{{ url('/manager/hapus_cs/' . $cs->id) }}" data-toggle="tooltip" onclick="return konfirmasi()" id="pesan"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                  @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>     
    <script>
       function konfirmasi(){
          var tanya = confirm("Apakah Anda Yakin Akan Menghapus Data Cleaning Service ini?");

@@ -39,9 +39,10 @@ Route::get('/logout', function () {
 // Manager
 Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
 Route::get('/manager/profile', [ManagerProfileController::class, 'index']);
+Route::post('/manager/profile',[ManagerProfileController::class, 'editProfil']);
 Route::get('/manager/laporan', [ReportController::class, 'index']);
-
-//Ruangan
+Route::get('/manager/laporan/pdf', [ReportController::class, 'pdf']);
+Route::get('/manager/laporan/excel', [ReportController::class, 'excel']);
 Route::get('/manager/ruangan', [RuanganController::class, 'tampilRuangan']);
 Route::get('/manager/tambah_ruangan', [RuanganController::class, 'tampiltambahRuangan']);
 Route::post('/manager/tambah_ruangan', [RuanganController::class, 'tambahRuangan']);
@@ -55,7 +56,8 @@ Route::get('/manager/cs', [CsController::class, 'tampilCS']);
 Route::get('/manager/edit_cs/{id}', [CsController::class, 'tampileditCS']);
 Route::post('/manager/edit_cs/{id}', [CsController::class, 'editCS']);
 Route::get('/manager/hapus_cs/{id}', [CsController::class, 'hapusCS']);
-Route::get('/manager/tampil_cs/', [CsController::class, 'tampiltambahCS']);
+Route::get('/manager/tambah_cs', [CsController::class, 'tampiltambahCS']);
+Route::post('/manager/tambah_cs', [CsController::class, 'tambahCS']);
 
 // CS
 Route::get('/cs/dashboard', [DashboardCsController::class, 'ruanganCS']);

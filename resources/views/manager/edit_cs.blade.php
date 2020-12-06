@@ -19,9 +19,9 @@
                                 <option value="select" style="margin-left: 20px">Ruang Sekarang: {{ $r->nama}}</option>
                             @endforeach
                             <label style="margin-left: 20px">Pilih Ruang:</label>
-                            <select name="ruang" multiple class="form-control" style="height: 110px;">
+                            <select name="ruang[]" multiple class="form-control" style="height: 110px;">
                                 @foreach ($cleanings->ruang as $r)
-                                    <option value="select">{{ $r->nama}}</option>
+                                    <option value="{{ $r->id }}" selected="">{{ $r->nama}}</option>
                                 @endforeach
                                 @foreach ($ruang as $r)
                                     <option value="{{ $r->id }}">{{ $r->nama }}</option>
@@ -36,7 +36,7 @@
                     </tr>
                     <tr>
                         <td style="margin-left: 20px">
-                            <input type="text" class="form-control" name="password" placeholder="Password">
+                            <input type="password" class="form-control" name="password" placeholder="Password">
                         </td>
                     </tr>
                     <tr>

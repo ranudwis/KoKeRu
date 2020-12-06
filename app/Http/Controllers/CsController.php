@@ -28,8 +28,8 @@ class CsController extends Controller
         'nama' => ['required', 'max:30'],
         'email' => ['required','email'],
         'password'=> ['nullable'],
-        // 'ruang'=>['required'],
         ]);
+
         $cleanings = User::find($id);
         $cleanings->nama =$request->nama;
         $cleanings->email =$request->email;
@@ -37,8 +37,12 @@ class CsController extends Controller
         if ($request->password) {
             $cleanings->password = Hash::make($request->password);
          }
-        // $cleanings as ruang-> $ruang;
-        // $ruang->nama =$request->ruang;
+        $cleanings->ruang()->update([
+          'user_id' => null
+        ]);
+        Ruang::whereIn('id', $request->ruang)->update([
+          'user_id' => $cleanings->id
+        ]);
 
         $cleanings->save();
         return redirect('/manager/cs');
@@ -55,7 +59,30 @@ class CsController extends Controller
 
     public function tampiltambahCS(Request $request)
     {
-        return view('manager.tambah_cs');
+        $ruang = Ruang::whereDoesntHave('cs')->get();
+        return view('manager.tambah_cs', compact('ruang'));
+    }
+
+    public function tambahCS(Request $request)
+    {
+        $request->validate([
+        'nama' => ['required', 'max:30'],
+        'email' => ['required','email'],
+        'password'=> ['nullable'],
+        ]);
+
+        $cleanings = new User();
+        $cleanings->nama =$request->nama;
+        $cleanings->email =$request->email;
+        $cleanings->password = Hash::make($request->password);
+
+        $cleanings->save();
+        //masih ngga bisa, update ngga tau diganti apa
+        Ruang::whereIn('id', $request->ruang)->update([
+          'user_id' => $cleanings->id
+        ]);
+
+        return redirect('/manager/cs');
     }
 
 }

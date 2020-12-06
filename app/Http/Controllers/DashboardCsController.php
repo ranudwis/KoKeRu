@@ -11,8 +11,17 @@ class DashboardCsController extends Controller
 {
     public function ruanganCS()
     {
-        $user = auth()->user();
-        $ruang = Ruang::all();
+        $ruang = auth()->user()
+            ->ruang()
+            ->withCount([
+                'laporan' => function ($query) {
+                    $query->whereDate('created_at', new \DateTime());
+                }
+            ])
+            ->get();
+
+
+
         return view('cs.ruang_cs', compact('ruang'));
     }
 
@@ -20,34 +29,33 @@ class DashboardCsController extends Controller
     {
         $ruang = Ruang::find($id);
 
-        $laporan = Laporan::where('id_ruang', $id)->where('created_at', new \DateTime())->first();
+        $laporan = $ruang->laporan()->with('bukti')->whereDate('created_at', new \DateTime())->first();
 
         return view('cs.upload', compact('ruang', 'laporan'));
     }
 
     public function storeCS(Request $request, $id)
     {
-
         $request->validate([
-            'gambar' => ['required', 'image'],
+            'gambar.*' => ['required', 'image'],
         ]);
 
         $ruang = Ruang::find($id);
 
-        $bukti = new Bukti();
-        $bukti->bukti = $request->gambar->store('public/post');
-        $bukti->created_at = new \DateTime();
-        $bukti->updated_at = new \DateTime();
-
-        if ($ruang->laporan()->where('created_at', new \DateTime())->get()->isEmpty()) {
+        if ($ruang->laporan()->whereDate('created_at', new \DateTime())->get()->isEmpty()) {
             $laporan = new Laporan();
             $laporan->user_id = auth()->id();
             $ruang->laporan()->save($laporan);
-            $laporan->id;
-            $laporan->bukti()->save($bukti);
+        } else {
+            $laporan = $ruang->laporan()->whereDate('created_at', new \DateTime())->first();
         }
 
-        $bukti->save();
+        foreach ($request->gambar as $gambar) {
+            $bukti = new Bukti();
+            $bukti->bukti = $gambar->store('public/bukti');
+
+            $laporan->bukti()->save($bukti);
+        }
 
         return back();
     }

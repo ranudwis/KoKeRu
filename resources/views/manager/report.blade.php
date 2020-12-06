@@ -35,32 +35,28 @@
         <button type="submit" class="btn btn-primary mb-2">Tampil</button>
     </form>
 
-    <div class="text-center mt-4">
-        <h4>
-            Laporan Harian Kebersihan dan Kerapihan Ruangan Gedung Bersama Maju<br />
-            Hari {{ $reportDate->isoFormat('dddd') }}
-            Tanggal {{ $reportDate->isoFormat('DD MMMM YYYY')}}
-        </h4>
-        <p>
-            << Tanggal Cetak {{ $now->isoFormat('DD MMMM YYYY') }} Jam {{ $now->isoFormat('HH:mm') }} WIB >>
-        </p>
-    </div>
+    <div class="mt-4">
+        <p class="text-right">
+            <a
+                href="{{
+                    url("manager/laporan/pdf?date={$reportDate}&status={$status}")
+                }}"
+                class="btn btn-primary"
+            >
+                <i class="far fa-fw fa-file-pdf"></i>
+                Cetak
+            </a>
 
-    <table class="table">
-        <tr>
-            <th>
-                No
-            </th>
-            <th>
-                Ruang
-            </th>
-            <th>
-                Nama CS
-            </th>
-            <th>
-                Status
-            </th>
-        </tr>
+            <a
+                href="{{
+                    url("manager/laporan/excel?date={$reportDate}&status={$status}")
+                }}"
+                class="btn btn-primary"
+            >
+                <i class="far fa-fw fa-file-excel"></i>
+                Download
+            </a>
+        </p>
 
         @foreach ($rooms as $room)
             <tr>
@@ -79,5 +75,6 @@
             </tr>
         @endforeach
     </table>   
-
+        @include('partial.reporttable')
+    </div>
 @endsection

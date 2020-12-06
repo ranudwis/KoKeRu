@@ -30,26 +30,8 @@
             </ul>
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <li class="dropdown user user-menu open">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                        <img src="{{ @asset('dist/img/manager.jpg') }}" class="user-image" alt="User Image">
-                        <span class="hidden-xs">{{ auth()->user()->nama }}</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="user-header">
-                            <img src="{{ @asset('dist/img/manager.jpg') }}" class="img-circle" alt="User Image">
-                            <p>{{ auth()->user()->nama }} <small>Member since 2020</small></p>
-                        </li>
-                        <li class="user-footer">
-                            <div class="pull-left">
-                                <a href="" class="btn btn-primary btn-flat">Edit Profil</a>
-                            </div>
-                            <div class="pull-right">
-                                <a href="/logout" class="btn btn-danger btn-flat">Log out</a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
+                <h4>{{ auth()->user()->nama }}</h4>
+                <a href="/logout" class="btn btn-danger btn-logout">Logout</a>
             </ul>
         </nav>
         <!-- /.navbar -->
