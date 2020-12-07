@@ -1,7 +1,8 @@
 @extends('partial.dashboard_manager')
 
 @section('content')
-    <form method="get" action="{{ url('manager/laporan') }}">
+
+<form method="get" action="{{ url('manager/laporan') }}">
         @csrf
 
         <div class="form-group">
@@ -57,6 +58,23 @@
             </a>
         </p>
 
+        @foreach ($rooms as $room)
+            <tr>
+                <td>
+                    {{ $loop->iteration }}
+                </td>
+                <td>
+                    {{ $room->nama }}
+                </td>
+                <td>
+                    {{ $room->cs->nama }}
+                </td>
+                <td>
+                    {{ $room->laporan_count == 0 ? 'Belum' : 'Sudah' }}
+                </td>
+            </tr>
+        @endforeach
+    </table>   
         @include('partial.reporttable')
     </div>
 @endsection

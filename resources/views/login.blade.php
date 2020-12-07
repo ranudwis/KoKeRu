@@ -3,35 +3,29 @@
 @section('title', 'Masuk')
 
 @section('content')
-	<div class="card">
-	  <div class="card-header">Log-in</div>
-	  <div class="card-body">
-	  	@if ($errors->any())
-                @foreach ($errors->all() as $error)
-                    {{ $error }}
-                @endforeach
-            @endif
-	    <form name="login" method="post" action="{{ url('login') }}">
-            @csrf
-
-     
-
-	    	<table>
-	    		<tr>
-	    			<td><i class="fas fa-envelope"></i></td>
-	    			<td>
-	    				<input type="text" class="form-control" name="email" autofocus placeholder="Email">
-	    			</td>
-	    		</tr>
-	    		<tr>
-	    			<td><i class="fas fa-key"></i></td>
-	    			<td>
-	    				<input type="password" class="form-control" name="password" placeholder="Password">
-	    			</td>
-	    		</tr>
-	    	</table>
-			<button type="submit" class="btn btn-primary" name="login">Login</button>
-		</form>
-	  </div>
-	</div>
+<body>
+    <div id="blur">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <form class="box" method="post" action="{{ url('login') }}">
+                            <h1>Login</h1>
+                            @if ($errors->any())
+                                @foreach ($errors->all() as $error)
+                                    {{ $error }}
+                                @endforeach
+                            @endif
+                            <p class="text-muted"> Please enter your email and password!</p>
+                            @csrf 
+                            <input type="text" class="form-control" name="email" autofocus placeholder="Email"> 
+                            <input type="password" class="form-control" name="password" placeholder="Password"> 
+                            <input type="submit" name="login" value="Login">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 @endsection
