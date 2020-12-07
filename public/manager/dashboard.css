@@ -29,11 +29,11 @@
 }
 
 .ruang_belum {
-    background-color: rgb(192, 77, 0);
+    background-color: #E53935;
 }
 
 .ruang_sudah {
-    background-color: rgb(47, 161, 47);
+    background-color: #4CAF50;
 }
 
 .ruang h1 {

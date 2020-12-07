@@ -10,8 +10,15 @@ class DashboardManagerController extends Controller
 {
     public function tampilDashboardManager()
     {
-        $ruang = Ruang::all();
         $now = new Carbon();
+
+        $ruang = Ruang::with('cs')
+            ->withCount([
+                'laporan' => function ($query) use ($now) {
+                    $query->whereDate('created_at', $now);
+                }
+            ])
+            ->get();
 
         return view('manager.dashboard', compact('ruang','now'));
     }
