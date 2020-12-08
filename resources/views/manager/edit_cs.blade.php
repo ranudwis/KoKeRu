@@ -11,10 +11,10 @@
                 @csrf
                 <table class="edit">
                     <tr>
-                        <td>
+                        <td style="width: 40%">
                             <input type="text" class="form-control" name="nama" autofocus value="{{ $cleanings->nama }}">
                         </td>
-                        <td rowspan="3">
+                        <td rowspan="4">
                             @foreach ($cleanings->ruang as $r)
                                 <option value="select" style="margin-left: 20px">Ruang Sekarang: {{ $r->nama}}</option>
                             @endforeach
@@ -27,6 +27,7 @@
                                     <option value="{{ $r->id }}">{{ $r->nama }}</option>
                                 @endforeach
                             </select>
+                            <p style="margin-left: 20px;font-style: italic;">"Untuk memilih atau menghapus ruangan tahan tombol ctrl dan klik ruangannya"</p>
                         </td>
                     </tr>
                     <tr>
