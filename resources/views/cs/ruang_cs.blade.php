@@ -3,7 +3,10 @@
 @section('content')
 <div class="container semua_ruang">
     <h1>Ruangan yang Harus Dibersihkan</h1>
-    <h4>Hari Minggu</h3>
+    <h4>
+        Hari {{ $now->isoFormat('dddd') }}, 
+        Tanggal {{ $now->isoFormat('DD MMMM YYYY') }}
+    </h4>
 
         @if ($errors->any())
             @foreach ($errors->all() as $e)

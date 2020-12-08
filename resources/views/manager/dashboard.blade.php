@@ -4,7 +4,10 @@
 
 <div class="container semua_ruang">
     <h1>Monitoring Kebersihan dan Kerapihan Ruang <br> Gedung Bersama Maju</h1>
-    <h4>{{ $now->isoFormat('DD MMMM YYYY') }}</h4>
+    <h4>
+        Hari {{ $now->isoFormat('dddd') }}, 
+        Tanggal {{ $now->isoFormat('DD MMMM YYYY') }}
+    </h4>
 
         @if ($errors->any())
         @foreach ($errors->all() as $e)

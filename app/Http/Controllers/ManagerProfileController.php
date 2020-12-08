@@ -16,16 +16,16 @@ class ManagerProfileController extends Controller
     public function editProfil(Request $request)
     {
         $request->validate([
-            'nama' => ['required', 'max:30'],
-            'email' => ['required','email'],
-            'password'=> ['required','confirmed'],
+	        'nama' => ['required', 'max:30'],
+	        'email' => ['required','email'],
+	        'password'=> ['required','confirmed'],
         ]);
-
+        
         $manager = auth()->user();
-        $manager->nama =$request->nama;
-        $manager->email =$request->email;
-        if (Hash::check($request->password_lama, auth()->user()->password)) {
-            $manager->password = $request->password;
+        $manager->nama = $request->nama;
+        $manager->email = $request->email;
+        if(Hash::check($request->password_lama, auth()->user()->password)) {
+            $manager->password = Hash::make($request->password);
         }
 
         $manager->save();

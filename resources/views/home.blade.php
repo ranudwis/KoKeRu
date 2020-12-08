@@ -19,9 +19,9 @@
 <div class="semua_ruang">
     <h1>Monitoring Kebersihan dan Kerapihan Ruang <br> Gedung Bersama Maju</h1>
     <h4>
-        Hari {{ $now->isoFormat('dddd') }}
+        Hari {{ $now->isoFormat('dddd') }}, 
         Tanggal {{ $now->isoFormat('DD MMMM YYYY') }}
-    </h3>
+    </h4>
         @if ($errors->any())
             @foreach ($errors->all() as $e)
                 <div>{{ $e }}</div>

@@ -7,7 +7,10 @@
             <a href="#">Kembali</a>
         </div> --}}
         <h1>{{$ruang->nama}}</h1>
-        <h4>Hari Kamis, 10 November 2020</h4>
+        <h4>
+            Hari {{ $now->isoFormat('dddd') }},
+            Tanggal {{ $now->isoFormat('DD MMMM YYYY') }}
+        </h4>
 
         <div class="container bukti">
             <div class="container upload">
