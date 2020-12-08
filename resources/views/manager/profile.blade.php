@@ -26,6 +26,5 @@
             <input id="newconfirmedpassword" class="form-control" type="password" name="password_confirmation" />
         </div>
         <button class="btn btn-primary" type="submit">Simpan</button>
-        <a href="/manager/dashboard" class="btn btn-danger">Cancel</a>
     </form>
 @endsection
