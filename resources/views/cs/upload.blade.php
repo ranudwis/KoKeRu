@@ -3,9 +3,9 @@
 @section('content')
 <div class="row dashboard">
     <div class="col semua_ruang">
-        {{-- <div class="container tombol_back">
-            <a href="#">Kembali</a>
-        </div> --}}
+        <div class="container tombol_back">
+            <a href="/cs/dashboard">Kembali</a>
+        </div>
         <h1>{{$ruang->nama}}</h1>
         <h4>
             Hari {{ $now->isoFormat('dddd') }},
