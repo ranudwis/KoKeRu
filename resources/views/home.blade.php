@@ -36,9 +36,8 @@
                 <h2>Status : {{ $r->getStatusString() }}</h2>
                 <h3>CS : {{ $r->cs->nama ?? '-' }}</h3>
                 @if($r->getStatus())
-                    <a href="#" onclick="togglePopup()">BUKTI</a>
+                    <a href="#" onclick="togglePopup({{ $r->id }})">BUKTI</a>
                 @endif
-
             </div>
         @endforeach
 </div>
@@ -49,38 +48,18 @@
       <div class="close-btn" onclick="togglePopup()">&times;</div>
       <h1 style="color: rgb(196, 56, 5)">Bukti Ruangan</h1>
         <div class="row gambar_bukti">
-            {{-- @foreach ($laporan->bukti as $l)
-                <div class="bukti_foto">
-                    <img class="foto" src="{{ Storage::url($l->bukti) }}" alt="kamar">
-                </div>
-            @endforeach --}}
-            <div class="bukti_foto">
-                <img class="foto" src="{{ Storage::url('hotel.jpg') }}" alt="kamar">
-            </div>
-            <div class="bukti_foto">
-                <img class="foto" src="{{ Storage::url('hotel.jpg') }}" alt="kamar">
-            </div>
-            <div class="bukti_foto">
-                <img class="foto" src="{{ Storage::url('hotel.jpg') }}" alt="kamar">
-            </div>
-            <div class="bukti_foto">
-                <img class="foto" src="{{ Storage::url('contoh_foto.jpeg') }}" alt="kamar">
-            </div>
-            <div class="bukti_foto">
-                <img class="foto" src="{{ Storage::url('contoh_foto.jpeg') }}" alt="kamar">
-            </div>
-            {{-- <h1>Belum ada bukti</h1> --}}
-        </div>   
+
+        </div>
     </div>
-  </div>  
+  </div>
 
     <script>
-        function togglePopup(){
+        async function togglePopup(id) {
             document.getElementById("popup-1").classList.toggle("active");
+
+            let bukti = await fetch('/bukti/' + id)
+            document.querySelector('.gambar_bukti').innerHTML = await bukti.text()
         }
     </script>
 </body>
-
-
-
 </html>
