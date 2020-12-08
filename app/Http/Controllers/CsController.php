@@ -25,14 +25,14 @@ class CsController extends Controller
     public function editCS(Request $request, $id)
     {
         $request->validate([
-        'nama' => ['required', 'max:30'],
-        'email' => ['required','email'],
-        'password'=> ['nullable'],
+            'nama' => ['required', 'max:30'],
+            'email' => ['required','email'],
+            'password'=> ['nullable'],
         ]);
 
         $cleanings = User::find($id);
-        $cleanings->nama =$request->nama;
-        $cleanings->email =$request->email;
+        $cleanings->nama = $request->nama;
+        $cleanings->email = $request->email;
         $cs = $request->nama;
         if ($request->password) {
             $cleanings->password = $request->password;
@@ -73,8 +73,8 @@ class CsController extends Controller
         ]);
 
         $cleanings = new User();
-        $cleanings->nama =$request->nama;
-        $cleanings->email =$request->email;
+        $cleanings->nama = $request->nama;
+        $cleanings->email = $request->email;
         $cleanings->password = Hash::make($request->password);
 
         $cleanings->save();
