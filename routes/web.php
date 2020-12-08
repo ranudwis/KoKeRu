@@ -12,6 +12,7 @@ use App\Http\Controllers\ReportController;
 use App\Http\Controllers\CsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardCsController;
+use App\Http\Controllers\BuktiController;
 
 
 /*
@@ -35,6 +36,8 @@ Route::get('/logout', function () {
     auth()->logout();
     return redirect('/');
 });
+
+Route::get('/bukti/{ruang}', [BuktiController::class, 'buktiRuang']);
 
 // Manager
 Route::get('/manager/dashboard', [DashboardManagerController::class, 'tampilDashboardManager']);
