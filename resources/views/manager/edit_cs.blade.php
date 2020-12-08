@@ -27,7 +27,7 @@
                                     <option value="{{ $r->id }}">{{ $r->nama }}</option>
                                 @endforeach
                             </select>
-                            <p style="margin-left: 20px;font-style: italic;">"Untuk memilih atau menghapus ruangan tahan tombol ctrl dan klik ruangannya"</p>
+                            <p style="margin-left: 20px;font-style: italic;font-size: 15px">"Untuk memilih atau menghapus ruangan tahan tombol ctrl dan klik ruangannya"</p>
                         </td>
                     </tr>
                     <tr>
