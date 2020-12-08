@@ -20,8 +20,6 @@ class DashboardCsController extends Controller
             ])
             ->get();
 
-
-
         return view('cs.ruang_cs', compact('ruang'));
     }
 
