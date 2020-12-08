@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ruang;
 use Carbon\Carbon;
+use App\Models\Laporan;
+
 
 class HomeController extends Controller
 {
@@ -19,6 +21,8 @@ class HomeController extends Controller
                 }
             ])
             ->get();
+
+        // $laporan = $ruang->laporan()->with('bukti')->whereDate('created_at', new \DateTime())->first();
 
         return view('home', compact('ruang', 'now'));
     }
