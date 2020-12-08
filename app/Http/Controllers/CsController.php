@@ -35,8 +35,9 @@ class CsController extends Controller
         $cleanings->email =$request->email;
         $cs = $request->nama;
         if ($request->password) {
-            $cleanings->password = Hash::make($request->password);
-         }
+            $cleanings->password = $request->password;
+        }
+
         $cleanings->ruang()->update([
           'user_id' => null
         ]);
