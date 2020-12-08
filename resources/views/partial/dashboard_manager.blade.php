@@ -30,12 +30,35 @@
             </ul>
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <h4>{{ auth()->user()->nama }}</h4>
-                <a href="/logout" class="btn btn-danger btn-logout">Logout</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="media align-items-center">
+                            <span class="avatar avatar-sm rounded-circle">
+                                <img alt="Image placeholder" src="{{ @asset('dist/img/manager1.svg') }}">
+                            </span>
+                            <div class="media-body ml-2 d-none d-lg-block">
+                                <span class="mb-0 text-lg  font-weight-bold">{{ auth()->user()->nama }}</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                        <div class=" dropdown-header noti-title">
+                            <h6 class="text-overflow m-0">Welcome!</h6>
+                        </div>
+                        <a href="/manager/profile" class="dropdown-item">
+                            <i class="fas fa-user-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                        <a href="/logout" class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Log out</span>
+                        </a>
+                    </div>
+                </li>
             </ul>
         </nav>
         <!-- /.navbar -->
-
 
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
