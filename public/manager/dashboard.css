@@ -26,15 +26,15 @@
     height: 220px;
     color: white;
     border-radius: 4px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .ruang_belum {
-    background-color: #E53935;
+    background-color: #e53935;
 }
 
 .ruang_sudah {
-    background-color: #4CAF50;
+    background-color: #4caf50;
 }
 
 .ruang h1 {
@@ -103,7 +103,7 @@
     MEDIAQUERIES
 ----------------------------------------------------- */
 
-@media  {
+@media {
     #sidebar {
         margin-left: 250px;
     }
@@ -113,4 +113,61 @@
     #sidebarCollapse span {
         display: none;
     }
+}
+
+/* ================ */
+/* POP UP */
+/* ================== */
+
+.popup .overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: none;
+}
+
+.popup .content {
+    position: absolute;
+    top: 10%;
+    left: 55%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    width: 1200px;
+    height: 650px;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.popup .close-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgb(141, 2, 2);
+    color: #fff;
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup.active .overlay {
+    display: block;
+}
+
+.popup.active .content {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
 }

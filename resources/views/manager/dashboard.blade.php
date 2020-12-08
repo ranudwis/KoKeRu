@@ -22,10 +22,30 @@
                 <h2>Status : {{ $r->getStatusString() }}</h2>
                 <h3>CS : {{ $r->cs->nama ?? '-' }}</h3>
                 @if($r->getStatus())
-                    <a href="#">BUKTI</a>
+                    <a href="#" onclick="togglePopup({{ $r->id }})">BUKTI</a>
                 @endif
             </div>
         @endforeach
     </div>
+
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+          <div class="close-btn" onclick="togglePopup()">&times;</div>
+          <h1 style="color: rgb(196, 56, 5)">Bukti Ruangan</h1>
+            <div class="row gambar_bukti">
+    
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        async function togglePopup(id) {
+            document.getElementById("popup-1").classList.toggle("active");
+    
+            let bukti = await fetch('/bukti/' + id)
+            document.querySelector('.gambar_bukti').innerHTML = await bukti.text()
+        }
+    </script>
 
 @endsection

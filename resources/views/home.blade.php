@@ -28,8 +28,7 @@
             @endforeach
         @endif
 
-        <div class="row flexing">
-
+    <div class="row flexing">
         @foreach ($ruang as $r)
             <div class="container ruang {{ $r->getStatus() ? 'ruang_sudah' : 'ruang_belum' }}">
                 <h1>{{ $r->nama }}</h1>
@@ -40,26 +39,26 @@
                 @endif
             </div>
         @endforeach
-</div>
+    </div>
 
-<div class="popup" id="popup-1">
-    <div class="overlay"></div>
-    <div class="content">
-      <div class="close-btn" onclick="togglePopup()">&times;</div>
-      <h1 style="color: rgb(196, 56, 5)">Bukti Ruangan</h1>
-        <div class="row gambar_bukti">
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+        <div class="close-btn" onclick="togglePopup()">&times;</div>
+        <h1 style="color: rgb(196, 56, 5)">Bukti Ruangan</h1>
+            <div class="row gambar_bukti">
 
+            </div>
         </div>
     </div>
-  </div>
 
-    <script>
-        async function togglePopup(id) {
-            document.getElementById("popup-1").classList.toggle("active");
+<script>
+    async function togglePopup(id) {
+        document.getElementById("popup-1").classList.toggle("active");
 
-            let bukti = await fetch('/bukti/' + id)
-            document.querySelector('.gambar_bukti').innerHTML = await bukti.text()
-        }
-    </script>
+        let bukti = await fetch('/bukti/' + id)
+        document.querySelector('.gambar_bukti').innerHTML = await bukti.text()
+    }
+</script>
 </body>
 </html>

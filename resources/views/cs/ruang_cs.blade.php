@@ -23,7 +23,7 @@
                 <h3>CS : {{ $r->cs->nama }}</h3>
 
                 @if ($r->getStatus())
-                    <a href="/cs/upload/{{ $r->id }}">LIHAT</a>
+                    <a href="/cs/upload/{{ $r->id }}">BUKTI</a>
                 @else
                     <a href="/cs/upload/{{ $r->id }}">UPLOAD</a>
                 @endif
