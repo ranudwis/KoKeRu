@@ -15,7 +15,7 @@
 	font-size: 18px;
 }
 .table-hover tr:hover td
-{ 	
+{
 	background: #C5CAE9;
 	font-weight: bold;
 }
@@ -30,7 +30,7 @@
 .card-body-profil{
 	padding-right: 30px;
 }
-.form-control{
+.form-control:not(.report){
 	margin-bottom: 10px;
 	margin-left: 20px;
 	border-radius: 2px;
