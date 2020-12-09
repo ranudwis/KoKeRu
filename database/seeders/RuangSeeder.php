@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Ruang;
 use App\Models\User;
+use Faker\Factory;
 
 class RuangSeeder extends Seeder
 {
@@ -15,18 +16,38 @@ class RuangSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 30; $i++) {
-            $user = new User();
-            $user->nama = 'Cleaning Service ' . ($i + 1);
-            $user->email = 'cs' . $i . '@kokeru.id';
-            $user->password = 'cs' . $i;
-            $user->tipe_akun = 'cs';
-            $user->save();
+        $tempRooms = [];
+        $letter = 'A';
+        $faker = Factory::create('id_ID');
+        $substractor = 0;
 
+        for ($i = 0; $i < 100; $i++) {
             $room = new Ruang();
-            $room->nama = 'Ruang ' . $i;
+            $room->nama = 'Ruang ' . $letter . ($i + 1 - $substractor);
+            $room->save();
 
-            $user->ruang()->save($room);
+            $tempRooms[] = $room;
+
+            if ($i != 0 && $i % 5 == 0) {
+                $user = new User();
+                $user->nama = $faker->name;
+                $user->email = $faker->unique()->email;
+                $user->password = '123456';
+                $user->tipe_akun = 'cs';
+                $user->save();
+
+                foreach ($tempRooms as $tempRoom) {
+                    $tempRoom->user_id = $user->id;
+                    $tempRoom->save();
+                }
+
+                $tempRooms = [];
+            }
+
+            if ($i != 0 && ($i + 1) % 20 == 0) {
+                $letter++;
+                $substractor += 20;
+            }
         }
     }
 }

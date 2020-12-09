@@ -14,9 +14,9 @@ class EmptyRoomSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 30; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             $ruang = new Ruang();
-            $ruang->nama = 'Ruang Kosong ' . $i;
+            $ruang->nama = 'Ruang F' . ($i + 1);
             $ruang->save();
         }
     }
