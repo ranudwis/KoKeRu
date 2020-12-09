@@ -21,7 +21,7 @@ class RuangSeeder extends Seeder
         $faker = Factory::create('id_ID');
         $substractor = 0;
 
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 95; $i++) {
             $room = new Ruang();
             $room->nama = 'Ruang ' . $letter . ($i + 1 - $substractor);
             $room->save();
