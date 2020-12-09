@@ -33,7 +33,7 @@ $(document).ready(function(){
                 <tbody>
                     @foreach ($ruang as $r)
                     <tr>
-                        <td>{{ $r -> id }}</td>
+                        <td>{{ $loop->iteration }}</td>
                         <td>{{ $r->nama }}</td>                        
                         <td>{{ $r->cs->nama ?? '-' }}</td>
                         <td>

@@ -9,7 +9,7 @@
     </p>
 </div>
 
-<table class="table">
+<table class="table table-striped">
     <tr>
         <th>
             No

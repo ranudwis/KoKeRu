@@ -41,7 +41,7 @@
                     href="{{
                         url("manager/laporan/pdf?date={$reportDate}&status={$status}")
                     }}"
-                    class="btn btn-primary"
+                    class="btn btn-secondary"
                 >
                     <i class="far fa-fw fa-file-pdf"></i>
                     Cetak
