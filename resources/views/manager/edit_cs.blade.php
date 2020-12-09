@@ -15,9 +15,12 @@
                             <input type="text" class="form-control" name="nama" autofocus value="{{ $cleanings->nama }}">
                         </td>
                         <td rowspan="4">
-                            @foreach ($cleanings->ruang as $r)
-                                <option value="select" style="margin-left: 20px">Ruang Sekarang: {{ $r->nama}}</option>
-                            @endforeach
+                            <option value="select" style="margin-left: 20px">
+                                Ruang Sekarang:
+                                @foreach ($cleanings->ruang as $r)
+                                    {{ $r->nama}},
+                                @endforeach
+                            </option>
                             <label style="margin-left: 20px">Pilih Ruang:</label>
                             <select name="ruang[]" multiple class="form-control" style="height: 110px;">
                                 @foreach ($cleanings->ruang as $r)
