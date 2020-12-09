@@ -33,11 +33,10 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media align-items-center">
-                            <span class="avatar avatar-sm rounded-circle">
-                                <img alt="Image placeholder" src="{{ @asset('dist/img/manager1.svg') }}">
-                            </span>
+                            <i class="fa fa-user" aria-hidden="true" style="font-size: 20px;"></i>
                             <div class="media-body ml-2 d-none d-lg-block">
-                                <span class="mb-0 text-lg  font-weight-bold">{{ auth()->user()->nama }}</span>
+                                <span class="mb-0 text-lg  font-weight-bold" style="font-size: 300px">{{ auth()->user()->nama }}</span>
+                                <i class="fa fa-chevron-circle-down" aria-hidden="true" style="margin:0 10px 0 10px; font-size: 20px; color:rgb(29, 70, 255)"></i>
                             </div>
                         </div>
                     </a>
