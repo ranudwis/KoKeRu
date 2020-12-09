@@ -18,7 +18,7 @@
 
                 <form action="" method="POST"  enctype="multipart/form-data">
                     @csrf
-                    <input type="file" accept="image/*" name="gambar[]" multiple>
+                    <input type="file" accept="image/*,video/*" name="gambar[]" multiple>
                     <div class="form-group" style="margin-top: 10px">
                         <button type="submit" class="btn btn-primary">
                             Submit
@@ -33,7 +33,16 @@
                 @else
                     @foreach ($laporan->bukti as $l)
                         <div class="bukti_foto">
-                            <img class="foto" src="{{ Storage::url($l->bukti) }}" alt="kamar">
+                            @if ($l->getType() == \App\Models\Bukti::TYPE_IMAGE)
+                                <img class="foto" src="{{ Storage::url($l->bukti) }}">
+                            @elseif ($l->getType() == \App\Models\Bukti::TYPE_VIDEO)
+                                <video width="360" controls>
+                                    <source src="{{ Storage::url($l->bukti) }}" type="{{ $l->getMime() }}" />
+
+                                    Video tidak dapat diputar
+                                </video>
+                            @endif
+
                             <form action="" method="POST">
                                 @csrf
                                 @method('DELETE')

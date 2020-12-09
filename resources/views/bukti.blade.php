@@ -1,5 +1,13 @@
 @foreach ($bukti as $b)
     <div class="bukti_foto">
-        <img class="foto" src="{{ Storage::url($b->bukti) }}">
+        @if ($b->getType() == \App\Models\Bukti::TYPE_IMAGE)
+            <img class="foto" src="{{ Storage::url($b->bukti) }}">
+        @elseif ($b->getType() == \App\Models\Bukti::TYPE_VIDEO)
+            <video width="360" controls>
+                <source src="{{ Storage::url($b->bukti) }}" type="{{ $b->getMime() }}" />
+
+                Video tidak dapat diputar
+            </video>
+        @endif
     </div>
 @endforeach

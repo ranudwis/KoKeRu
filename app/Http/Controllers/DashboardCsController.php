@@ -39,7 +39,7 @@ class DashboardCsController extends Controller
     public function storeCS(Request $request, $id)
     {
         $request->validate([
-            'gambar.*' => ['required', 'image'],
+            'gambar.*' => ['required', 'mimetypes:image/*,video/*'],
         ]);
 
         $ruang = Ruang::find($id);
