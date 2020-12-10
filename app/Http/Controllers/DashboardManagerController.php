@@ -13,7 +13,7 @@ class DashboardManagerController extends Controller
         $now = new Carbon();
 
         $ruang = Ruang::with('cs')
-            ->withCount([
+            ->with([
                 'laporan' => function ($query) use ($now) {
                     $query->whereDate('created_at', $now);
                 }

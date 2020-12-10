@@ -43,10 +43,10 @@
                                 </video>
                             @endif
 
-                            <form action="" method="POST">
+                            <form action="{{ url('/bukti/' . $l->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <input type="submit" value="Hapus" class="btn btn-danger btn-md">
+                                <input type="submit" value="Hapus" class="btn btn-danger btn-md" onclick="return confirm('Yakin akan menghapus bukti?')">
                             </form>
                         </div>
                     @endforeach

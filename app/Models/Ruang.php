@@ -27,11 +27,16 @@ class Ruang extends Model
     }
 
     public function getStatus() {
-        return $this->laporan_count != 0;
+        return $this->report && $this->report->bukti->count() != 0;
     }
 
     public function getStatusString()
     {
         return $this->getStatus() ? 'Sudah' : 'Belum';
+    }
+
+    public function getReportAttribute()
+    {
+        return $this->laporan[0] ?? null;
     }
 }
