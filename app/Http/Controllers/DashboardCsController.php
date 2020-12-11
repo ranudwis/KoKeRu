@@ -61,4 +61,16 @@ class DashboardCsController extends Controller
 
         return back();
     }
+
+    public function hapusBukti($id)
+    {
+        // $bukti = Bukti::find($id);
+        // if ($bukti) {
+        //     $bukti->delete();
+        // }
+
+        Bukti::destroy($id);
+
+        return back();
+    }
 }

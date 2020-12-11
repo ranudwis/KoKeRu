@@ -43,7 +43,7 @@
                                 </video>
                             @endif
 
-                            <form action="" method="POST">
+                            <form action="/cs/upload/{{$l->id}}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <input type="submit" value="Hapus" class="btn btn-danger btn-md">
