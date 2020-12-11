@@ -66,4 +66,4 @@ Route::post('/manager/tambah_cs', [CsController::class, 'tambahCS']);
 Route::get('/cs/dashboard', [DashboardCsController::class, 'ruanganCS']);
 Route::get('/cs/upload/{id}', [DashboardCsController::class, 'showCS']);
 Route::post('/cs/upload/{id}', [DashboardCsController::class, 'storeCS']);
-Route::delete('/cs/upload/{id}', [DashboardCsController::class, 'hapusBukti']);
+Route::delete('/bukti/{bukti}', [DashboardCSController::class, 'hapusBukti']);

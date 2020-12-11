@@ -7,6 +7,7 @@ use App\Models\Ruang;
 use App\Models\Bukti;
 use App\Models\Laporan;
 use Carbon\Carbon;
+use Storage;
 
 class DashboardCsController extends Controller
 {
@@ -16,7 +17,7 @@ class DashboardCsController extends Controller
 
         $ruang = auth()->user()
             ->ruang()
-            ->withCount([
+            ->with([
                 'laporan' => function ($query) {
                     $query->whereDate('created_at', new \DateTime());
                 }
@@ -62,14 +63,10 @@ class DashboardCsController extends Controller
         return back();
     }
 
-    public function hapusBukti($id)
+    public function hapusBukti(Bukti $bukti)
     {
-        // $bukti = Bukti::find($id);
-        // if ($bukti) {
-        //     $bukti->delete();
-        // }
-
-        Bukti::destroy($id);
+        Storage::delete($bukti->bukti);
+        $bukti->delete();
 
         return back();
     }

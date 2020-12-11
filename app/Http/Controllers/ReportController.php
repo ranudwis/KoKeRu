@@ -75,7 +75,7 @@ class ReportController extends Controller
         }
 
         $rooms = Ruang::with('cs')
-            ->withCount([
+            ->with([
                 'laporan' => $this->reportDateQuery(),
             ]);
 
