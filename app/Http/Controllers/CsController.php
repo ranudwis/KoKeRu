@@ -28,6 +28,7 @@ class CsController extends Controller
             'nama' => ['required', 'max:30'],
             'email' => ['required','email'],
             'password'=> ['nullable'],
+            'ruang' =>['required'],
         ]);
 
         $cleanings = User::find($id);
@@ -67,9 +68,10 @@ class CsController extends Controller
     public function tambahCS(Request $request)
     {
         $request->validate([
-        'nama' => ['required', 'max:30'],
-        'email' => ['required','email'],
-        'password'=> ['nullable'],
+            'nama' => ['required', 'max:30'],
+            'email' => ['required','email'],
+            'password'=> ['required'],
+            'ruang' => ['required'],
         ]);
 
         $cleanings = new User();
