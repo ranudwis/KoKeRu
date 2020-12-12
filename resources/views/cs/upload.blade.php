@@ -43,11 +43,7 @@
                                 </video>
                             @endif
 
-<<<<<<< HEAD
-                            <form action="/cs/upload/{{$l->id}}" method="POST">
-=======
                             <form action="{{ url('/bukti/' . $l->id) }}" method="POST">
->>>>>>> 8a81fb30f85ff5d981df0606ff95e769da421ecd
                                 @csrf
                                 @method('DELETE')
                                 <input type="submit" value="Hapus" class="btn btn-danger btn-md" onclick="return confirm('Yakin akan menghapus bukti?')">
